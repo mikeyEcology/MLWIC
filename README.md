@@ -1,6 +1,8 @@
 # MLWIC: Machine Learning for Wildlife Image Classification
 
-*Note: At this point, MLWIC will only run on MacIntosh computers. You can attempt to use Windows, but Step 3 will require more work on your part. We hope to eventually optimize MLWIC for windows as well. If you do not already have it, you will need to install Anaconda using the Python 2.7 version found [here](https://www.anaconda.com/download/#macos). 
+This package identifies animal species in game camera images by implementing the Species Level model described in Tabak et al.
+
+*Note: At this point, `MLWIC` will only run on MacIntosh computers. You can attempt to use Windows, but Step 3 will require more work on your part. We hope to eventually optimize `MLWIC` for windows as well (see note below). If you do not already have it, you will need to install Anaconda <b>using the Python 2.7 version</b> found [here](https://www.anaconda.com/download/#macos). 
 
 <b>Step 1: Download the L1 folder from this github directory.</b> Store this folder in a location that makes sense on your computer. Note the location, as you will specify this as `model_dir` when you run the functions `MLWIC_eval`, `MLWIC_make_output`, and `MLWIC_train`.
 
@@ -15,7 +17,7 @@ library(MLWIC)
 ```
 MLWIC_setup()
 ```
-`python_loc` is the location of Python 2.7 on your computer. On Macs, it is often in the default directory. This function installs necessary software including TensorFlow and several necessary Python packages. Running this function will take some time.
+`python_loc` is the location of Python 2.7 on your computer. On Macs, it is often in the default directory. This function installs necessary software including TensorFlow and several necessary Python packages. Running this function will take some time. 
 
 <b>Step 4: Classify your images using `MLWIC_eval`.</b> Run the Species Level model (from Tabak et al.) on your images. If you have images with associated labels (you have already classified the animals in the images), you can check the model's function on your images. \
 <b>A)</b> Place all of your images in one folder, each image must have a unique name. The absolute location of this folder will be your `path_prefix`. \
@@ -35,3 +37,6 @@ MLWIC_setup()
 <b>D)</b> `log_dir_train` will be the name of the folder that you want to store the trained model information. You will not need to look at this folder, but you will specify it as the `log_dir` when you run `MLWIC_eval`. If you are running multiple models on your machine you will want to use different names each time or else they will be over-written. \
 <b>E)</b> `num_classes` is the number of species or groups of species in your dataset. If you have all of your IDs stored in a vector called `IDs`, `num_classes` should be equal to `length(unique(IDs))`. \
 <b>F)</b> Note that training a model will require a long time to process. More images and more species or groups will require more time to train. We recommend using a computing cluster. If one is not available, we recommend using a machine that you can afford to leave alone for a considerable amount of time. 
+
+
+<b>Why doesn't `MLWIC` run on Windows?</b> `MLWIC` uses [TensorFlow](https://www.tensorflow.org/), which on Windows can only be used with Python >= 3.5. Our models depend on Python 2.7. If you can effectively run TensorFlow on Windows with Python 2.7, then you may be able to run `MLWIC` on Windows. 
