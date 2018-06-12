@@ -1,6 +1,6 @@
 # MLWIC
 
-*Note: At this point, MLWIC will only run on MacIntosh computers. You can attempt to use Windows, but Step 3 will require more work on your part. We hope to eventually optimize MLWIC for windows as well. 
+*Note: At this point, MLWIC will only run on MacIntosh computers. You can attempt to use Windows, but Step 3 will require more work on your part. We hope to eventually optimize MLWIC for windows as well. If you do not already have it, you will need to install Anaconda using the Python 2.7 version found [here](https://www.anaconda.com/download/#macos). 
 
 Step 1: Download the L1 folder from this github directory. Store this folder in a location that makes sense on your computer. Note the location, as you will specify this as `model_dir` when you run the functions `MLWIC_eval`, `MLWIC_make_output`, and `MLWIC_train`.
 
@@ -27,10 +27,11 @@ E) `num_classes` is the number of species or groups of species in the model. If 
 
 Step 5: Making a pretty output csv. After evaluating your model, your output will be in your L1 directory in a format that is not reader friendly. You can use `MLWIC_make_output` to make this output more readable and in a desired location.\
 A) `output_location` is the absolute path to where you want to store the output, and `output_name` is the name of a file (ending in `.csv`) where you want to store the output. \
-B) `saved_predictions` is the name of the csv where you stored the predictions from `MLWIC_eval`. If you used the default there, use the default here. 
+B) `saved_predictions` is the name of the csv where you stored the predictions from `MLWIC_eval`. If you used the default there, use the default here. \
 C) `model_dir` is the same location you used in Step 4. 
 
+
 Step 6: Training a model. If you have many images with associated labels and you want to train your own model, you can do this using `MLWIC_train`. Steps A, B, and C will be similar to Step 4, but for Step B, you will want to be sure that column 2 contains meaningful species labels (i.e., don't put a 0 in every row if you want to train the model for multiple species). Your first species must be 0, and subsequent species will be increasing numbers: 0,1,2, don't leave a number unused (e.g., if you have a species with the ID=4, you must have species with IDs=0,1,2,3). \
-D) `log_dir_train` will be the name of the folder that you want to store the trained model information. You will not need to look at this folder, but you will specify it as the `log_dir` when you run `MLWIC_eval`. If you are running multiple models on your machine you will want to use different names each time or else they will be over-written. 
-E) `num_classes` is the number of species or groups of species in your dataset. If you have all of your IDs stored in a vector called `IDs`, `num_classes` should be equal to `length(unique(IDs))`. 
+D) `log_dir_train` will be the name of the folder that you want to store the trained model information. You will not need to look at this folder, but you will specify it as the `log_dir` when you run `MLWIC_eval`. If you are running multiple models on your machine you will want to use different names each time or else they will be over-written. \
+E) `num_classes` is the number of species or groups of species in your dataset. If you have all of your IDs stored in a vector called `IDs`, `num_classes` should be equal to `length(unique(IDs))`. \
 F) Note that training a model will require a long time to process. More images and more species or groups will require more time to train. We recommend using a computing cluster. If one is not available, we recommend using a machine that you can afford to leave alone for a considerable amount of time. 
