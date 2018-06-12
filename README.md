@@ -17,12 +17,12 @@ MLWIC_setup()
 ```
 `python_loc` is the location of Python 2.7 on your computer. On Macs, it is often in the default directory. This function installs necessary software including TensorFlow and several necessary Python packages. Running this function will take some time.
 
-<b>Step 4: Evaluate the model on your images using `MLWIC_eval`.</b> If you have images with associated labels (you have already classified the animals in the images), you can check the model's function on your images. \
+<b>Step 4: Classify your images using `MLWIC_eval`.</b> If you have images with associated labels (you have already classified the animals in the images), you can check the model's function on your images. \
 A) Place all of your images in one folder, each image must have a unique name. The absolute location of this folder will be your `path_prefix`. \
 B) Create a csv file with only 2 columns. The first column must contain a unique filename for each image in your image directory. The second column must contain a number relating to the species that are in the image. This is the "Class ID" from Table 1 in Tabak et al. If you do not know the species in your images, you can put a 0 in each row of this column. Do not name these columns (no column headers) and do not include any more than 2 columns in this file. You will use the name of this file in the `data_info` command. \
 C) For `model_dir`, specify the absolute path to where you stored the L1 folder in step 1. E.g., "C:/Users/Mikey/Desktop" (this would mean that I have placed the L1 folder on my desktop). \
 D) For `log_dir`, use the default if you are using our model from Tabak et al. If you trained your own model using `MLWIC_train`, use the `log_dir_train` that you specified in that function. \
-E) `num_classes` is the number of species or groups of species in the model. If you are using our model, `num_classes=28`. If you trained your own model, this is the number that you specified. \
+E) `num_classes` is the number of species or groups of species in the model. If you are using our model, `num_classes=28`. If you trained your own model, this is the number that you specified. 
 
 
 <b>Step 5: Making a pretty output csv.</b> After evaluating your model, your output will be in your L1 directory in a format that is not reader friendly. You can use `MLWIC_make_output` to make this output more readable and in a desired location.\
