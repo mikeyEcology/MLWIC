@@ -1,0 +1,14 @@
+Package: MLWIC
+Type: Package
+Title: Machine Learning for Wildlife Image Classification
+Version: 0.0.1
+Author: Mikey Tabak
+Maintainer: Mikey Tabak <michael.a.tabak@aphis.usda.gov>
+Description: This package evaluates images using the Species Level model from Tabak et al.
+    in the function MLWIC_eval. It also allows users to train their own machine 
+    learning model to classify wildlife using the MLWIC_train.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Imports: reticulate, utils

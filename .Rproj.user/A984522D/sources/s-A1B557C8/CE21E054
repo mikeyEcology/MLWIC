@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1528507990815.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CE21E054",
+    "lastKnownWriteTime" : 1528855930,
+    "last_content_update" : 1528855930522,
+    "path" : "~/Desktop/APHIS/mtMoran_projects/MLWIC_dir/MLWIC_package/MLWIC/R/MLWIC_setup.R",
+    "project_path" : "R/MLWIC_setup.R",
+    "properties" : {
+        "cursorPosition" : "6,32",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
