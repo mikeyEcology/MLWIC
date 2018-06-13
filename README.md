@@ -1,10 +1,12 @@
-# MLWIC: Machine Learning for Wildlife Image Classification
+# MLWIC: Machine Learning for Wildlife Image Classification in R
 
 This package identifies animal species in game camera images by implementing the Species Level model described in Tabak et al.
 
 *Note: At this point, `MLWIC` will only run on MacIntosh computers. You can attempt to use Windows, but Step 3 will require more work on your part. We hope to eventually optimize `MLWIC` for windows as well (see note below). If you do not already have it, you will need to install Anaconda <b>using the Python 2.7 version</b> found [here](https://www.anaconda.com/download/#macos). 
 
-<b>Step 1: Download the L1 folder from this github directory.</b> Store this folder in a location that makes sense on your computer. Note the location, as you will specify this as `model_dir` when you run the functions `MLWIC_eval`, `MLWIC_make_output`, and `MLWIC_train`.
+<b>Step 0: Install TensorFlow on your computer following the directions [here](https://www.tensorflow.org/install/).</b> This is a temporary step, as we are working on adding a function to the MLWIC package that will do this automatically. Until then, this can be a complicated procedure that will be easiest if you are running a newer MacIntosh with the latest OS. 
+
+<b>Step 1: Download the L1 folder from this [link](https://drive.google.com/file/d/1_VH78A9AgCErMIcsbOlNEBXgASx2pRsP/view?usp=sharing).</b> After clinking on the link, a new tab will open showing L1.zip. Download this folder by clicking on the download button in the upper right hand corner (looks like an arrow pointing down to a line). Unzip the folder and then store this L1 folder in a location that makes sense on your computer (e.g., Desktop). Note the location, as you will specify this as `model_dir` when you run the functions `MLWIC_eval`, `MLWIC_make_output`, and `MLWIC_train`.
 
 <b>Step 2: In the R console, install the `MLWIC` package using the command</b>
 ```
