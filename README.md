@@ -1,6 +1,6 @@
 # MLWIC: Machine Learning for Wildlife Image Classification in R
 
-This package identifies animal species in game camera images by implementing the Species Level model described in Tabak et al.
+This package identifies animal species in game camera images by implementing the Species Level model described in [Tabak et al.](https://www.biorxiv.org/content/early/2018/06/13/346809)
 
 *Note: At this point, `MLWIC` will only run on MacIntosh computers. You can attempt to use Windows, but Step 3 will require more work on your part. We hope to eventually optimize `MLWIC` for windows as well (see note below). If you do not already have it, you will need to install Anaconda <b>using the Python 2.7 version</b> found [here](https://www.anaconda.com/download/#macos). 
 
@@ -32,9 +32,9 @@ setup()
 
 <b>Classify your images using `classify`.</b> Run the Species Level model (from Tabak et al.) on your images. If you have images with associated labels (you have already classified the animals in the images), you can check the model's function on your images. \
 <b>A)</b> Place all of your images in one folder, each image must have a unique name. The absolute location of this folder will be your `path_prefix`. \
-<b>B)</b> Create a csv file with only 2 columns. The first column must contain a unique filename for each image in your image directory. The second column must contain a number relating to the species that are in the image. This is the "Class ID" from Table 1 in Tabak et al. If you do not know the species in your images, you can put a 0 in each row of this column. Do not name these columns (no column headers) and do not include any more than 2 columns in this file. You will use the name of this file in the `data_info` command. \
+<b>B)</b> Create a csv file with only 2 columns. The first column must contain a unique filename for each image in your image directory. The second column must contain a number relating to the species that are in the image. This is the "Class ID" from the groupID file in this repository. If you do not know the species in your images, you can put a 0 in each row of this column. Do not name these columns (no column headers) and do not include any more than 2 columns in this file. You will use the name of this file in the `data_info` command. \
 <b>C)</b> For `model_dir`, specify the absolute path to where you stored the L1 folder in step 1. E.g., "C:/Users/Mikey/Desktop" (this would mean that I have placed the L1 folder on my desktop). \
-<b>D)</b> For `log_dir`, use the default if you are using our model from Tabak et al. If you trained your own model using `train`, use the `log_dir_train` that you specified in that function. \
+<b>D)</b> For `log_dir`, use the default if you are using our model from [Tabak et al.](https://www.biorxiv.org/content/early/2018/06/13/346809) If you trained your own model using `train`, use the `log_dir_train` that you specified in that function. \
 <b>E)</b> `num_classes` is the number of species or groups of species in the model. If you are using our model, `num_classes=28`. If you trained your own model, this is the number that you specified. 
 
 
