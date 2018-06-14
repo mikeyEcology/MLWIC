@@ -2,7 +2,7 @@
 
 This package identifies animal species in game camera images by implementing the Species Level model described in [Tabak et al.](https://www.biorxiv.org/content/early/2018/06/13/346809)
 
-*Note: At this point, `MLWIC` will only run on MacIntosh or Unix computers. You can attempt to use Windows, but Step 2 will require more work on your part. We hope to eventually optimize `MLWIC` for windows as well (see note below). If you do not already have it, you will need to install Anaconda <b>using the Python 2.7 version</b> found [here](https://www.anaconda.com/download/#macos). 
+*Note: At this point, `MLWIC` is not configured to run on Windows. You can attempt to use Windows, but Step 2 will require more work on your part. We hope to eventually optimize `MLWIC` for windows as well (see note below). If you do not already have it, you will need to install Anaconda <b>using the Python 2.7 version</b> found [here](https://www.anaconda.com/download/#macos). 
 
 
 <b>Step 1: In R, install the `MLWIC` package</b>
@@ -24,7 +24,7 @@ Run the function `setup`. `python_loc` is the location of Python 2.7 on your com
 <i> You only need to run steps 2-4 the first time you use this package on a computer.</i>
 
 
-<i><b>I recommend before running models on your own data, you try running using the [example  provided](https://github.com/mikeyEcology/MLWIC_examples/tree/master). </b></i>
+<i><b>Before running models on your own data, I recommend you try running using the [example  provided](https://github.com/mikeyEcology/MLWIC_examples/tree/master). </b></i>
 
 
 <b>Classify your images using `classify`.</b> Run the Species Level model (from Tabak et al.) on your images. If you have images with associated labels (you have already classified the animals in the images), you can check the model's function on your images. \
@@ -41,7 +41,7 @@ Run the function `setup`. `python_loc` is the location of Python 2.7 on your com
 <b>C)</b> `model_dir` is the same location you used in Step 4. 
 
 
-<b>Training a model.</b> If you have many images with associated labels and you want to train your own model, you can do this using `train`. Steps A, B, and C will be similar to classification, but for Step B, you will want to be sure that column 2 contains meaningful species labels (i.e., don't put a 0 in every row if you want to train the model for multiple species). Your first species must be 0, and subsequent species will be increasing numbers: 0,1,2, don't leave a number unused (e.g., if you have a species with the ID=4, you must have species with IDs=0,1,2,3). <b>The csv you make must have Unix linebreaks.</b>\
+<b>Train a model.</b> If you have many images with associated labels and you want to train your own model, you can do this using `train`. Steps A, B, and C will be similar to classification, but for Step B, you will want to be sure that column 2 contains meaningful species labels (i.e., don't put a 0 in every row if you want to train the model for multiple species). Your first species must be 0, and subsequent species will be increasing numbers: 0,1,2, don't leave a number unused (e.g., if you have a species with the ID=4, you must have species with IDs=0,1,2,3). <b>The csv you make must have Unix linebreaks.</b>\
 <b>D)</b> `log_dir_train` will be the name of the folder that you want to store the trained model information. You will not need to look at this folder, but you will specify it as the `log_dir` when you run `classify`. If you are running multiple models on your machine you will want to use different names each time or else they will be over-written. \
 <b>E)</b> `num_classes` is the number of species or groups of species in your dataset. If you have all of your IDs stored in a vector called `IDs`, `num_classes` should be equal to `length(unique(IDs))`. \
 <b>F)</b> Note that training a model will require a long time to process. More images and more species or groups will require more time to train. We recommend using a computing cluster. If one is not available, we recommend using a machine that you can afford to leave alone for a considerable amount of time. 
