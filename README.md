@@ -12,12 +12,13 @@ devtools::install_github("MLWIC")
 library(MLWIC)
 ```
 
-<i> You only need to run steps 1 and 2 the first time you use this package on a computer.</i>\
+<i> You only need to run steps 2 and 3 the first time you use this package on a computer.</i>\
 <b>Step 2: Install TensorFlow on your computer.</b> The function `tensoflow` will do this on Macintosh and Ubuntu machines, but the installation of this software is incosistent. If you have trouble using our function, you can try doing this independently by following the directions [here](https://www.tensorflow.org/install/). 
 
 
-<b>Step 3: Download the L1 folder from this [link](https://drive.google.com/file/d/1_VH78A9AgCErMIcsbOlNEBXgASx2pRsP/view?usp=sharing).</b> After clinking on the link, a new tab will open showing L1.zip. Download this folder by clicking on the download button in the upper right hand corner (looks like an arrow pointing down to a line). Unzip the folder and then store this L1 folder in a location that makes sense on your computer (e.g., Desktop). Note the location, as you will specify this as `model_dir` when you run the functions `classify`, `make_output`, and `train`.
-<i> You only need to run steps 1 and 2 the first time you use this package on a computer.</i>\
+<b>Step 3: Download the L1 folder from this [link](https://drive.google.com/file/d/1_VH78A9AgCErMIcsbOlNEBXgASx2pRsP/view?usp=sharing).</b> After clinking on the link, a new tab will open showing L1.zip. Download this folder by clicking on the download button in the upper right hand corner (looks like an arrow pointing down to a line). Unzip the folder and then store this L1 folder in a location that makes sense on your computer (e.g., Desktop). Note the location, as you will specify this as `model_dir` when you run the functions `classify`, `make_output`, and `train`. \
+<i> You only need to run steps 2 and 3 the first time you use this package on a computer.</i>
+
 
 <b>Step 4: Setup your environment for using `MLWIC`</b>
 ```
