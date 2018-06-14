@@ -7,7 +7,7 @@ This package identifies animal species in game camera images by implementing the
 
 <b>Step 1: In R, install the `MLWIC` package</b>
 ```
-devtools::install_github("MLWIC")
+devtools::install_github("mikeyEcology/MLWIC")
 # then load the MLWIC library
 library(MLWIC)
 ```
