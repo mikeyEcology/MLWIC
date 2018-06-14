@@ -30,7 +30,7 @@ tensorflow <- function(os="Mac"){
       system("sudo apt-get install python-pip python-dev")   # for Python 2.7
       system("pip install tensorflow")
 
-      system("python import_tf.py")
+      #system("python import_tf.py")
 
     }else if(os == "Windows"){
       print("Sorry. MLWIC does not run on Windows yet.")
