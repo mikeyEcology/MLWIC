@@ -2,4 +2,6 @@
 
 export(classify)
 export(make_output)
+export(setup)
+export(tensorflow)
 export(train)

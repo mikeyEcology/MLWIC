@@ -8,8 +8,7 @@ setup(python_loc = "/anaconda2/bin/python")
 }
 \arguments{
 \item{python_loc}{The location of python 2.7 on your machine. If you are
-using a Macintosh, the default is the likely location.
-@export}
+using a Macintosh, the default is the likely location.}
 }
 \description{
 \code{setup} installs necessary R packages on your computer. You will

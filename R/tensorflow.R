@@ -5,6 +5,7 @@
 #' @param os The operating system on your computer. Options are "Mac" or "Ubuntu".
 #'  Specifying "Windows" will thrown an error because we cannot automatically install
 #'  TensorFlow on Windows at this time.
+#' @export
 
 tensorflow <- function(os="Mac"){
 

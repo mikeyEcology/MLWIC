@@ -5,7 +5,7 @@
 #' need to run this before running \code{classify} and \code{train}.
 #' @param python_loc The location of python 2.7 on your machine. If you are
 #'  using a Macintosh, the default is the likely location.
-#'
+#' @export
 setup <- function(
   python_loc = "/anaconda2/bin/python"
 ){
