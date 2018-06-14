@@ -19,15 +19,12 @@ library(MLWIC)
 <b>Step 3: Download the L1 folder from this [link](https://drive.google.com/file/d/1_VH78A9AgCErMIcsbOlNEBXgASx2pRsP/view?usp=sharing).</b> After clinking on the link, a new tab will open showing L1.zip. Download this folder by clicking on the download button in the upper right hand corner (looks like an arrow pointing down to a line). Unzip the folder and then store this L1 folder in a location that makes sense on your computer (e.g., Desktop). Note the location, as you will specify this as `model_dir` when you run the functions `classify`, `make_output`, and `train`. \
 
 
-<b>Step 4: Setup your environment for using `MLWIC`</b>
-```
-setup()
-```
-`python_loc` is the location of Python 2.7 on your computer. On Macs, it is often in the default directory. This function installs necessary software including TensorFlow and several necessary Python packages. Running this function will take some time. \
+<b>Step 4: Setup your environment for using `MLWIC`</b>\
+Run the function `setup`. `python_loc` is the location of Python 2.7 on your computer. On Macs, it is often in the default directory. This function installs necessary software including TensorFlow and several necessary Python packages. Running this function will take some time. \
 <i> You only need to run steps 2-4 the first time you use this package on a computer.</i>
 
 
-<i><b>I recommend that before running models on your own data, you try running using the examples [here](https://github.com/mikeyEcology/MLWIC_examples/tree/master). </b></i>
+<i><b>I recommend before running models on your own data, you try running using the [example  provided](https://github.com/mikeyEcology/MLWIC_examples/tree/master). </b></i>
 
 
 <b>Classify your images using `classify`.</b> Run the Species Level model (from Tabak et al.) on your images. If you have images with associated labels (you have already classified the animals in the images), you can check the model's function on your images. \
@@ -51,7 +48,7 @@ setup()
 
 
 <b>Notes:</b>\
-<b>Why doesn't `MLWIC` run on Windows?</b> `MLWIC` uses [TensorFlow](https://www.tensorflow.org/), which on Windows can only be used with Python >= 3.5. Our models depend on Python 2.7. If you can effectively run TensorFlow on Windows with Python 2.7, then you may be able to run `MLWIC` on Windows. 
+Why doesn't `MLWIC` run on Windows? `MLWIC` uses [TensorFlow](https://www.tensorflow.org/), which on Windows can only be used with Python >= 3.5. Our models depend on Python 2.7. If you can effectively run TensorFlow on Windows with Python 2.7, then you may be able to run `MLWIC` on Windows. 
 
 If you are using this package for a publication, please cite our manuscript: [Machine learning to classify animal species in camera trap images: applications in ecology](https://www.biorxiv.org/content/early/2018/06/13/346809).
 
