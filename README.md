@@ -2,7 +2,7 @@
 
 This package identifies animal species in game camera images by implementing the Species Level model described in [Tabak et al.](https://www.biorxiv.org/content/early/2018/06/13/346809)
 
-*Note: At this point, `MLWIC` will only run on MacIntosh computers. You can attempt to use Windows, but Step 2 will require more work on your part. We hope to eventually optimize `MLWIC` for windows as well (see note below). If you do not already have it, you will need to install Anaconda <b>using the Python 2.7 version</b> found [here](https://www.anaconda.com/download/#macos). 
+*Note: At this point, `MLWIC` will only run on MacIntosh or Unix computers. You can attempt to use Windows, but Step 2 will require more work on your part. We hope to eventually optimize `MLWIC` for windows as well (see note below). If you do not already have it, you will need to install Anaconda <b>using the Python 2.7 version</b> found [here](https://www.anaconda.com/download/#macos). 
 
 
 <b>Step 1: In R, install the `MLWIC` package</b>
