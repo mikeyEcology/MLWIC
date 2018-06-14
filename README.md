@@ -24,7 +24,11 @@ library(MLWIC)
 setup()
 ```
 `python_loc` is the location of Python 2.7 on your computer. On Macs, it is often in the default directory. This function installs necessary software including TensorFlow and several necessary Python packages. Running this function will take some time. \
-<i> You only need to run steps 2-4 the first time you use this package on a computer.</i>\
+<i> You only need to run steps 2-4 the first time you use this package on a computer.</i>
+
+
+<i><b>I recommend that before running models on your own data, you try running using the examples [here](https://github.com/mikeyEcology/MLWIC_examples/tree/master). </b></i>
+
 
 <b>Classify your images using `classify`.</b> Run the Species Level model (from Tabak et al.) on your images. If you have images with associated labels (you have already classified the animals in the images), you can check the model's function on your images. \
 <b>A)</b> Place all of your images in one folder, each image must have a unique name. The absolute location of this folder will be your `path_prefix`. \
