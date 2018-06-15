@@ -32,10 +32,11 @@ Run the function `setup`. `python_loc` is the location of Python 2.7 on your com
 <b>B)</b> Create a csv file with only 2 columns. The first column must contain a unique filename for each image in your image directory. The second column must contain a number relating to the species that are in the image. This is the "Class ID" from the [speciesID file in this repository](https://github.com/mikeyEcology/MLWIC/blob/master/speciesID.csv). If you do not know the species in your images, you can put a 0 in each row of this column. Do not name these columns (no column headers) and do not include any more than 2 columns in this file. You will use the name of this file in the `data_info` command. <b>The csv you make must have Unix linebreaks.</b> \
 <b>C)</b> For `model_dir`, specify the absolute path to where you stored the L1 folder in step 1. E.g., "C:/Users/Mikey/Desktop" (this would mean that I have placed the L1 folder on my desktop). \
 <b>D)</b> For `log_dir`, use the default if you are using our model from [Tabak et al.](https://www.biorxiv.org/content/early/2018/06/13/346809) If you trained your own model using `train`, use the `log_dir_train` that you specified in that function. \
-<b>E)</b> `num_classes` is the number of species or groups of species in the model. If you are using our model, `num_classes=28`. If you trained your own model, this is the number that you specified. 
+<b>E)</b> `num_classes` is the number of species or groups of species in the model. If you are using our model, `num_classes=28`. If you trained your own model, this is the number that you specified. \
+If you are classifying many images at once, you may want to break them into batches of ~10,000, depending on your computer. If you have a computer with a lot of RAM (> 16 GB) or you are using a computing cluster, you will not need to worry about this. 
 
 
-<b>Making a pretty output csv.</b> After evaluating your model, your output will be in your L1 directory in a format that is not reader friendly. You can use `make_output` to make this output more readable and in a desired location.\
+<b>Make a pretty output csv.</b> After evaluating your model, your output will be in your L1 directory in a format that is not reader friendly. You can use `make_output` to make this output more readable and in a desired location.\
 <b>A)</b> `output_location` is the absolute path to where you want to store the output, and `output_name` is the name of a file (ending in `.csv`) where you want to store the output. \
 <b>B)</b> `saved_predictions` is the name of the csv where you stored the predictions from `classify`. If you used the default there, use the default here. \
 <b>C)</b> `model_dir` is the same location you used in Step 4. 
