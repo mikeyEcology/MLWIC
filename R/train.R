@@ -6,7 +6,8 @@
 #' time to run. We recommend using a GPU if possible. In the \code{data_info} csv, you must
 #' have two columns with NO HEADERS. Column 1 must be the file name of the image. Column 2
 #' must be a number corresponding to the species. Give each species (or group of species) a
-#' number identifying it. The first species must be 0, the next species 1, and so on.
+#' number identifying it. The first species must be 0, the next species 1, and so on. If this is your first time using
+#' this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .
 #'
 #' @param path_prefix Absolute path to location of the images on your computer
 #' @param data_info csv with file names for each photo (absolute path to file). This file must have no headers (column names).

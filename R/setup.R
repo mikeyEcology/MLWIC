@@ -2,7 +2,9 @@
 #'
 #'
 #' \code{setup} installs necessary R packages on your computer. You will
-#' need to run this before running \code{classify} and \code{train}.
+#' need to run this before running \code{classify} and \code{train}.If this is your first time using
+#' this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .
+#'
 #' @param python_loc The location of python 2.7 on your machine. If you are
 #'  using a Macintosh, the default is the likely location.
 #' @export

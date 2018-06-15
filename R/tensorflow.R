@@ -1,7 +1,9 @@
 #' Install TensorFlow for use with \code{MLWIC}
 #'
 #' \code{MLWIC} requires an installation of tensorflow that can be used by Python.
-#' You need to use this before using \code{classify} or \code{train}.
+#' You need to use this before using \code{classify} or \code{train}. If this is your first time using
+#' this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .
+#'
 #' @param os The operating system on your computer. Options are "Mac" or "Ubuntu".
 #'  Specifying "Windows" will thrown an error because we cannot automatically install
 #'  TensorFlow on Windows at this time.

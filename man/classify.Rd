@@ -44,5 +44,6 @@ If you are using the built in model, the default is appropriate.}
 \code{classify} Uses the Species Level model from Tabak et al. (the built in model) to predict
 the species in each image. If you trained a model using \code{train},
 this function can also be used to evalute images using the model developed by
-\code{train} by specifying the \code{log_dir} of the trained model.
+\code{train} by specifying the \code{log_dir} of the trained model. If this is your first time using
+this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .
 }

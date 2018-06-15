@@ -3,7 +3,8 @@
 #' \code{classify} Uses the Species Level model from Tabak et al. (the built in model) to predict
 #' the species in each image. If you trained a model using \code{train},
 #' this function can also be used to evalute images using the model developed by
-#' \code{train} by specifying the \code{log_dir} of the trained model.
+#' \code{train} by specifying the \code{log_dir} of the trained model. If this is your first time using
+#' this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .
 #'
 #' @param path_prefix Absolute path to location of the images on your computer (or computing cluster).
 #'  All images must be stored in one folder.
