@@ -20,7 +20,7 @@ library(MLWIC)
 
 
 <b>Step 4: Setup your environment for using `MLWIC`</b>\
-Run the function `setup`. `python_loc` is the location of Python 2.7 on your computer. On Macs, it is often in the default directory. This function installs necessary software including TensorFlow and several necessary Python packages. Running this function will take some time. \
+Run the function `setup`. `python_loc` is the location of Python 2.7 on your computer. On Macs, it is often in the default-you can determine the location by opening a terminal window and typing `which python`. This function installs necessary software including TensorFlow and several necessary Python packages. Running this function will take some time. \
 <i> You only need to run steps 2-4 the first time you use this package on a computer.</i>
 
 
