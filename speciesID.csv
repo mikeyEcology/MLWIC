@@ -1,29 +1,1 @@
-Class ID,Group name,scientific_name
-0,Moose,Alces alces
-1,Cattle,Bos taurus
-2,Quail,Callipepla californica
-3,Canidae,Canidae
-4,Elk,Cervus elaphus
-5,Mustelidae,Mustelidae
-6,Corvid,Corvidae
-7,Armadillo,Dasypus novemcinctus
-8,Turkey,Meleagris gallopavo
-9,Opossum,Didelphis virginiana
-10,Horse,Equus spp. 
-11,Human,Homo sapiens
-12,Rabbits,Leporidae
-13,Bobcat,Lynx rufus
-14,Striped skunk,Mephitis mephitis
-15,Unidentfied deer,Odocoileus spp. 
-16,Rodent,Rodentia
-17,Mule deer,Odocoileus hemionus
-18,White-tailed deer,Odocoileus virginianus
-19,Raccoon,Procyon lotor
-20,Mountain lion,Puma concolor
-21,Squirrel,Sciurus spp.
-22,Wild pig,Sus scrofa
-23,Fox,Vulpes vulpes and Urocyon Cinereoargentus
-24,Black Bear,Ursus americanus
-25,Vehicle,
-26,Bird,Aves
-27,Empty,
+Class ID,Group name,scientific_name0,Moose,Alces alces1,Cattle,Bos taurus2,Quail,Callipepla californica3,Canidae,Canidae4,Elk,Cervus canadensis5,Mustelidae,Mustelidae6,Corvid,Corvidae7,Armadillo,Dasypus novemcinctus8,Turkey,Meleagris gallopavo9,Opossum,Didelphis virginiana10,Horse,Equus spp. 11,Human,Homo sapiens12,Rabbits,Leporidae13,Bobcat,Lynx rufus14,Striped skunk,Mephitis mephitis15,Unidentfied deer,Odocoileus spp. 16,Rodent,Rodentia17,Mule deer,Odocoileus hemionus18,White-tailed deer,Odocoileus virginianus19,Raccoon,Procyon lotor20,Mountain lion,Puma concolor21,Squirrel,Sciurus spp.22,Wild pig,Sus scrofa23,Fox,Vulpes vulpes and Urocyon Cinereoargentus24,Black Bear,Ursus americanus25,Vehicle,26,Bird,Aves27,Empty,
