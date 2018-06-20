@@ -26,7 +26,7 @@ tensorflow <- function(os="Mac"){
 
       system("sudo pip install tensorflow")
       ## Something to validate installation, beyond this.
-      system("python import_tf.py")
+      #system("python import_tf.py")
 
     }else if(os == "Ubuntu"){
       system("sudo apt-get install python-pip python-dev")   # for Python 2.7
