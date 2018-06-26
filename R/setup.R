@@ -30,8 +30,9 @@ setup <- function(
 
   # create a conda environment
   #reticulate::conda_create("r-reticulate", conda="/anaconda3/bin/conda")
-  #reticulate::conda_install("r-reticulate", packs)
   reticulate::conda_create("r-reticulate", conda=conda_loc)
+  #reticulate::conda_install("r-reticulate", packs)
 
-  reticulate::py_install(packs)
+
+  reticulate::py_install(packs, conda=conda_loc)
 }
