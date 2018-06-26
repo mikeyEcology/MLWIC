@@ -30,7 +30,7 @@ train <- function(
   path_prefix,
   data_info,
   model_dir,
-  python_loc = "/anaconda2/bin/python2.7", # location of python 2.7 on your machine
+  python_loc = "/anaconda2/bin/", # location of python 2.7 on your machine
   num_classes = 28, # number of classes in model
   delimiter = ",", # this will be , for a csv.
   log_dir_train = "train_output"
@@ -51,7 +51,7 @@ train <- function(
   system(cpfile)
 
   train_py <- paste0(python_loc,
-                     " train.py --architecture resnet --depth 18",
+                     " python2.7 train.py --architecture resnet --depth 18",
                      " --path_prefix ", path_prefix,
                      " --num_gpus 2 --batch_size 128 --data_info data_info_train.csv",
                      " --delimiter ", delimiter,
@@ -70,3 +70,8 @@ train <- function(
                 "specify this directory as the log_dir when you use classify(). ")
   print(txt)
 }
+
+# train(path_prefix = "/Users/mikeytabak/Desktop/APHIS/mtMoran_projects/MLWIC_dir/MLWIC_package/MLWIC_examples/MLWIC_examples/test_images",
+#       data_info = "/Users/mikeytabak/Desktop/APHIS/mtMoran_projects/MLWIC_dir/MLWIC_package/MLWIC_examples/MLWIC_examples/image_labels.csv",
+#       model_dir = "/Users/mikeytabak/Desktop",
+#       python_loc = "/anaconda2/bin/python2.7")

@@ -7,9 +7,12 @@
 #'
 #' @param python_loc The location of python 2.7 on your machine. If you are
 #'  using a Macintosh, the default is the likely location.
+#'  @param conda_loc The location of conda. It is usually in the same folder as python 2.7
+#'
 #' @export
 setup <- function(
-  python_loc = "/anaconda2/bin/python"
+  python_loc = "/anaconda2/bin/python2.7",
+  conda_loc = "/anaconda2/bin/conda"
 ){
   # load reticulate
   #library(devtools)
@@ -20,14 +23,15 @@ setup <- function(
 
   # packages needed for MLWIC
   packs <- c(#"re", "math",
-             "numpy", "cycler", "matplotlib", #"StringIO", "sys",
+             "numpy", "cycler", "matplotlib", "tornado", #"StringIO", "sys",
              "argparse", #"os",
              "six", "scipy", "datetime", "tensorflow" #, "time"
              )
 
   # create a conda environment
-  #reticulate::conda_create("r-reticulate")
+  #reticulate::conda_create("r-reticulate", conda="/anaconda3/bin/conda")
   #reticulate::conda_install("r-reticulate", packs)
+  reticulate::conda_create("r-reticulate", conda=conda_loc)
 
   reticulate::py_install(packs)
 }

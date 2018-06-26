@@ -4,11 +4,13 @@
 \alias{setup}
 \title{Setup your computer to run \code{MLWIC}}
 \usage{
-setup(python_loc = "/anaconda2/bin/python")
+setup(python_loc = "/anaconda2/bin/python2.7",
+  conda_loc = "/anaconda2/bin/conda")
 }
 \arguments{
 \item{python_loc}{The location of python 2.7 on your machine. If you are
-using a Macintosh, the default is the likely location.}
+using a Macintosh, the default is the likely location.
+@param conda_loc The location of conda. It is usually in the same folder as python 2.7}
 }
 \description{
 \code{setup} installs necessary R packages on your computer. You will

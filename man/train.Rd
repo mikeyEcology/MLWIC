@@ -4,9 +4,8 @@
 \alias{train}
 \title{Train a machine learning model to classify images}
 \usage{
-train(path_prefix, data_info, model_dir,
-  python_loc = "/anaconda2/bin/python2.7", num_classes = 28,
-  delimiter = ",", log_dir_train = "train_output")
+train(path_prefix, data_info, model_dir, python_loc = "/anaconda2/bin/",
+  num_classes = 28, delimiter = ",", log_dir_train = "train_output")
 }
 \arguments{
 \item{path_prefix}{Absolute path to location of the images on your computer}
