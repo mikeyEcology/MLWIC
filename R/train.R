@@ -16,6 +16,7 @@
 #'  number identifying it. The first species must be 0, the next species 1, and so on.
 #' @param python_loc The location of python 2.7 on your machine. If you are
 #'  using a Macintosh, the default is the likely location
+#' @param num_gpus The number of GPUs available. If you are using a CPU, leave this as default.
 #' @param num_classes The number of classes (species or groups of species) in your model.
 #' @param delimiter this will be a `,` for a csv.
 #' @param model_dir Absolute path to the location where you stored the L1 folder
@@ -31,6 +32,7 @@ train <- function(
   data_info,
   model_dir,
   python_loc = "/anaconda2/bin/", # location of python 2.7 on your machine
+  num_gpus = 2,
   num_classes = 28, # number of classes in model
   delimiter = ",", # this will be , for a csv.
   log_dir_train = "train_output"
@@ -51,9 +53,10 @@ train <- function(
   system(cpfile)
 
   train_py <- paste0(python_loc,
-                     " python2.7 train.py --architecture resnet --depth 18",
+                     "python2.7 train.py --architecture resnet --depth 18",
                      " --path_prefix ", path_prefix,
-                     " --num_gpus 2 --batch_size 128 --data_info data_info_train.csv",
+                     " --num_gpus ", num_gpus,
+                     " --batch_size 128 --data_info data_info_train.csv",
                      " --delimiter ", delimiter,
                      " --retrain_from USDA182 --num_classes ", num_classes,
                      " --log_dir ", log_dir_train)

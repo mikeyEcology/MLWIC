@@ -5,7 +5,8 @@
 \title{Train a machine learning model to classify images}
 \usage{
 train(path_prefix, data_info, model_dir, python_loc = "/anaconda2/bin/",
-  num_classes = 28, delimiter = ",", log_dir_train = "train_output")
+  num_gpus = 2, num_classes = 28, delimiter = ",",
+  log_dir_train = "train_output")
 }
 \arguments{
 \item{path_prefix}{Absolute path to location of the images on your computer}
@@ -20,6 +21,8 @@ that you downloaded from github.}
 
 \item{python_loc}{The location of python 2.7 on your machine. If you are
 using a Macintosh, the default is the likely location}
+
+\item{num_gpus}{The number of GPUs available. If you are using a CPU, leave this as default.}
 
 \item{num_classes}{The number of classes (species or groups of species) in your model.}
 

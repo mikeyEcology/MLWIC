@@ -33,6 +33,7 @@ setup <- function(
   reticulate::conda_create("r-reticulate", conda=conda_loc)
   #reticulate::conda_install("r-reticulate", packs)
 
-
+  # install python packages
   reticulate::py_install(packs, conda=conda_loc)
+
 }
