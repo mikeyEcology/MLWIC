@@ -4,7 +4,8 @@
 \alias{classify}
 \title{Classify images using the trained model}
 \usage{
-classify(path_prefix, data_info, model_dir,
+classify(path_prefix = paste0(getwd(), "/images"),
+  data_info = paste0(getwd(), "/image_labels.csv"), model_dir = getwd(),
   save_predictions = "model_predictions.txt",
   python_loc = "/anaconda2/bin/", num_classes = 28, delimiter = ",",
   log_dir = "USDA182")
@@ -42,7 +43,12 @@ If you are using the built in model, the default is appropriate.}
 }
 \description{
 \code{classify} Uses the Species Level model from Tabak et al. (the built in model) to predict
-the species in each image. If you trained a model using \code{train},
+the species in each image. This function uses absolute paths, but if you are unfamilliar with this
+process, you can put all of your images, the image label csv ("data_info") and the L1 folder that you
+downloaded following the directions at https://github.com/mikeyEcology/MLWIC into one directory on
+your computer. Then set your working directory to this location and the function will find the
+absolute paths for you.
+If you trained a model using \code{train},
 this function can also be used to evalute images using the model developed by
 \code{train} by specifying the \code{log_dir} of the trained model. If this is your first time using
 this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .

@@ -14,6 +14,7 @@ using a Macintosh, the default is the likely location.
 }
 \description{
 \code{setup} installs necessary R packages on your computer. You will
-need to run this before running \code{classify} and \code{train}.If this is your first time using
+need to run this before running \code{classify} and \code{train}. If this is your first time using
 this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .
+If you follow the link to install Anacoda for Python 2.7, it should be in the default location.
 }

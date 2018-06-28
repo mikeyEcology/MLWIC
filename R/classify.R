@@ -1,7 +1,12 @@
 #' Classify images using the trained model
 #'
 #' \code{classify} Uses the Species Level model from Tabak et al. (the built in model) to predict
-#' the species in each image. If you trained a model using \code{train},
+#' the species in each image. This function uses absolute paths, but if you are unfamilliar with this
+#' process, you can put all of your images, the image label csv ("data_info") and the L1 folder that you
+#' downloaded following the directions at https://github.com/mikeyEcology/MLWIC into one directory on
+#' your computer. Then set your working directory to this location and the function will find the
+#' absolute paths for you.
+#' If you trained a model using \code{train},
 #' this function can also be used to evalute images using the model developed by
 #' \code{train} by specifying the \code{log_dir} of the trained model. If this is your first time using
 #' this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .
@@ -30,10 +35,9 @@
 #'  that you downloaded from github.
 #' @export
 classify <- function(
-  # set up some parameters for function
-  path_prefix , # absolute path to location of the images on your computer
-  data_info, # csv with file names for each photo. See details
-  model_dir,
+  path_prefix = paste0(getwd(), "/images"), # absolute path to location of the images on your computer
+  data_info = paste0(getwd(), "/image_labels.csv"), # csv with file names for each photo. See details
+  model_dir = getwd(),
   save_predictions = "model_predictions.txt", # txt file where you want model output to go
   python_loc = "/anaconda2/bin/", # location of the python that Anacnoda uses on your machine
   num_classes = 28, # number of classes in model
@@ -41,6 +45,8 @@ classify <- function(
   log_dir = "USDA182"
 
 ){
+  wd1 <- getwd() # the starting working directory
+
   # navigate to directory with trained model
   if(endsWith(model_dir, "/")){
     setwd(paste0(model_dir, "L1"))
@@ -81,7 +87,8 @@ classify <- function(
                 "To view the results in a viewer-friendly format, please use the function make_output")
   print(txt)
 
+  # return to previous working directory
+  setwd(wd1)
+
 }
 
-#classify(path_prefix="/Users/mikeytabak/Desktop/APHIS/mtMoran_projects/MLWIC/Brook_Images", data_info="Brook_images.csv",
-#            save_predictions = "model_predictions_Brook_images.txt")

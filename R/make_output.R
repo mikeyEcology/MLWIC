@@ -1,7 +1,8 @@
 #' Present output from a dataset classified by \code{MLWIC}
 #'
 #' \code{make_output} will make a clean csv presenting the results from your run
-#' of \code{classify}.
+#' of \code{classify}. If you are planning to avoid typing absolute paths, you need to first
+#' set your working directory to the location where you stored your images folder and data_info csv.
 #'
 #' @param output_location Absolute path where you want the output csv stored. This path
 #'  must exist on your computer.
@@ -12,11 +13,14 @@
 #'  that you downloaded from github.
 #' @export
 make_output <- function(
-  output_location,
-  model_dir,
+  output_location=getwd(),
+  model_dir=getwd(),
   output_name = "output.csv",
   saved_predictions = "model_predictions.txt"
 ){
+
+  wd1 <- getwd() # the starting working directory
+
   #- read in text file of model output
   # navigate to directory with trained model
   if(endsWith(model_dir, "/")){
@@ -44,4 +48,7 @@ make_output <- function(
   utils::write.csv(out[,-1], output_full)
 
   print(paste0("Output can be found here: ", output_full))
+
+  # return to previous working directory
+  setwd(wd1)
 }

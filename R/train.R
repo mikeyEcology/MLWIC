@@ -8,6 +8,11 @@
 #' must be a number corresponding to the species. Give each species (or group of species) a
 #' number identifying it. The first species must be 0, the next species 1, and so on. If this is your first time using
 #' this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .
+#' This function uses absolute paths, but if you are unfamilliar with this
+#' process, you can put all of your images, the image label csv ("data_info") and the L1 folder that you
+#' downloaded following the directions at https://github.com/mikeyEcology/MLWIC into one directory on
+#' your computer. Then set your working directory to this location and the function will find the
+#' absolute paths for you.
 #'
 #' @param path_prefix Absolute path to location of the images on your computer
 #' @param data_info csv with file names for each photo (absolute path to file). This file must have no headers (column names).
@@ -28,9 +33,9 @@
 #' @export
 train <- function(
   # set up some parameters for function
-  path_prefix,
-  data_info,
-  model_dir,
+  path_prefix = paste0(getwd(), "/images"), # absolute path to location of the images on your computer
+  data_info = paste0(getwd(), "/image_labels.csv"), # csv with file names for each photo. See details
+  model_dir = getwd(),
   python_loc = "/anaconda2/bin/", # location of python 2.7 on your machine
   num_gpus = 2,
   num_classes = 28, # number of classes in model

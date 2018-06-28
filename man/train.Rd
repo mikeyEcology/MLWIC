@@ -4,7 +4,8 @@
 \alias{train}
 \title{Train a machine learning model to classify images}
 \usage{
-train(path_prefix, data_info, model_dir, python_loc = "/anaconda2/bin/",
+train(path_prefix = paste0(getwd(), "/images"), data_info = paste0(getwd(),
+  "/image_labels.csv"), model_dir = getwd(), python_loc = "/anaconda2/bin/",
   num_gpus = 2, num_classes = 28, delimiter = ",",
   log_dir_train = "train_output")
 }
@@ -42,4 +43,9 @@ have two columns with NO HEADERS. Column 1 must be the file name of the image. C
 must be a number corresponding to the species. Give each species (or group of species) a
 number identifying it. The first species must be 0, the next species 1, and so on. If this is your first time using
 this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .
+This function uses absolute paths, but if you are unfamilliar with this
+process, you can put all of your images, the image label csv ("data_info") and the L1 folder that you
+downloaded following the directions at https://github.com/mikeyEcology/MLWIC into one directory on
+your computer. Then set your working directory to this location and the function will find the
+absolute paths for you.
 }
