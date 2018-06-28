@@ -1,5 +1,7 @@
 # MLWIC: Machine Learning for Wildlife Image Classification in R
 
+<b> package is currently under maintentence. It should be repaired in the next hour: starting 28 June 2018: 10:30 am MT </b>
+
 This package identifies animal species in game camera images by implementing the Species Level model described in [Tabak et al.](https://www.biorxiv.org/content/early/2018/06/13/346809)
 
 *Note: At this point, `MLWIC` is not configured to run on Windows. You can attempt to use Windows, but Step 2 will require more work on your part. We hope to eventually optimize `MLWIC` for windows as well (see note below). If you do not already have it, you will need to install Anaconda <b>using the Python 2.7 version</b> found [here](https://www.anaconda.com/download/#macos). 

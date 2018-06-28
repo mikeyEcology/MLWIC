@@ -20,6 +20,9 @@ make_output <- function(
 ){
 
   wd1 <- getwd() # the starting working directory
+  # set these parameters before changing directory
+  output_location = output_location
+  model_dir = model_dir
 
   #- read in text file of model output
   # navigate to directory with trained model

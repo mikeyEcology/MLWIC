@@ -42,6 +42,14 @@ train <- function(
   delimiter = ",", # this will be , for a csv.
   log_dir_train = "train_output"
 ) {
+
+  wd1 <- getwd() # the starting working directory
+
+  # set these parameters before changing directory
+  path_prefix = path_prefix
+  data_info = data_info
+  model_dir = model_dir
+
   # navigate to directory with trained model
   if(endsWith(model_dir, "/")){
     setwd(paste0(model_dir, "L1"))
