@@ -1,6 +1,6 @@
 # MLWIC: Machine Learning for Wildlife Image Classification in R
 
-<b> package is currently under maintentence. It should be repaired in the next hour: starting 28 June 2018: 10:30 am MT </b>
+<b> package maintenence is complete, currently updating documentation: 28 June 18, 11 am MT</b>
 
 This package identifies animal species in game camera images by implementing the Species Level model described in [Tabak et al.](https://www.biorxiv.org/content/early/2018/06/13/346809)
 
