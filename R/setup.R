@@ -30,7 +30,9 @@ setup <- function(
              "tensorflow" #, "time"
              )
 
-  # create a conda environment
+  #- create a conda environment
+  # first remove cconda environment
+  reticulate::conda_remove("r-reticulate")
   #reticulate::conda_create("r-reticulate", conda="/anaconda3/bin/conda")
   reticulate::conda_create("r-reticulate", conda=conda_loc)
   #reticulate::conda_install("r-reticulate", packs)
