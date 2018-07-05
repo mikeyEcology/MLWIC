@@ -20,7 +20,7 @@ library(MLWIC)
 
 
 <b>Step 4: Setup your environment for using `MLWIC`</b>\
-Run the function `setup`. `python_loc` is the location of Python 2.7 on your computer. On Macs, it is often in the default-you can determine the location by opening a terminal window and typing `which python2.7`. This function installs several necessary Python packages. Running this function will take some time. \
+Run the function `setup`. `python_loc` is the location of Python 2.7 on your computer. On Macs, it is often in the default-you can determine the location by opening a terminal window and typing `which python2.7`. This function installs several necessary Python packages. Running this function will take a few minutes. If you already have a conda environment called "r-reticulate" with Python packages installed, you can specify `r_reticulate = TRUE`; if you don't know what this means, leave this argument as the default by not specifying it. \
 <i> You only need to run steps 2-4 the first time you use this package on a computer.</i>
 
 
