@@ -5,12 +5,16 @@
 \title{Setup your computer to run \code{MLWIC}}
 \usage{
 setup(python_loc = "/anaconda2/bin/python2.7",
-  conda_loc = "/anaconda2/bin/conda")
+  conda_loc = "/anaconda2/bin/conda", r_reticulate = FALSE)
 }
 \arguments{
 \item{python_loc}{The location of python 2.7 on your machine. If you are
-using a Macintosh, the default is the likely location.
-@param conda_loc The location of conda. It is usually in the same folder as python 2.7}
+using a Macintosh, the default is the likely location.}
+
+\item{conda_loc}{The location of conda. It is usually in the same folder as python 2.7}
+
+\item{r_reticulate}{Logical. Do you have an environment called "r-reticulate" for which you have
+installed Python packages previously and want to retain these packages. Default is FALSE.}
 }
 \description{
 \code{setup} installs necessary R packages on your computer. You will

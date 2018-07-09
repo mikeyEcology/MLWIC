@@ -35,7 +35,7 @@ setup <- function(
 
   #- create a conda environment if it doesn't already exist
   if(!r_reticulate){
-    # first remove cconda environment
+    # first remove conda environment
     reticulate::conda_remove("r-reticulate")
     # then create it
     reticulate::conda_create("r-reticulate", conda=conda_loc)
