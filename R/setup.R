@@ -29,8 +29,8 @@ setup <- function(
   packs <- c(#"re", "math",
              "numpy", "cycler", "matplotlib", "tornado", #"StringIO", "sys",
              "argparse", #"os",
-             "six", "scipy"#, #"datetime",
-             #"tensorflow" #, "time"
+             "six", "scipy", #"datetime",
+             "tensorflow" #, "time"
              )
 
   #- create a conda environment if it doesn't already exist
