@@ -19,8 +19,7 @@
 #'  column 1 must be the file name of each image including the extention (i.e., .jpg). Column 2
 #'  must be a number corresponding to the species. Give each species (or group of species) a
 #'  number identifying it. The first species must be 0, the next species 1, and so on.
-#' @param python_loc The location of python 2.7 on your machine. If you are
-#'  using a Macintosh, the default is the likely location
+#' @param python_loc The location of python on your machine.
 #' @param num_gpus The number of GPUs available. If you are using a CPU, leave this as default.
 #' @param num_classes The number of classes (species or groups of species) in your model.
 #' @param delimiter this will be a `,` for a csv.
@@ -36,7 +35,7 @@ train <- function(
   path_prefix = paste0(getwd(), "/images"), # absolute path to location of the images on your computer
   data_info = paste0(getwd(), "/image_labels.csv"), # csv with file names for each photo. See details
   model_dir = getwd(),
-  python_loc = "/anaconda2/bin/", # location of python 2.7 on your machine
+  python_loc = "/anaconda2/bin/",
   num_gpus = 2,
   num_classes = 28, # number of classes in model
   delimiter = ",", # this will be , for a csv.
@@ -66,7 +65,7 @@ train <- function(
   system(cpfile)
 
   train_py <- paste0(python_loc,
-                     "python2.7 train.py --architecture resnet --depth 18",
+                     "python train.py --architecture resnet --depth 18",
                      " --path_prefix ", path_prefix,
                      " --num_gpus ", num_gpus,
                      " --batch_size 128 --data_info data_info_train.csv",
@@ -78,7 +77,7 @@ train <- function(
   toc <- Sys.time()
   system(train_py)
   tic <- Sys.time()
-  runtime <- tic-toc
+  runtime <- difftime(tic, toc, units="auto")
 
   # end function
   txt <- paste0("training of images took ", runtime, ". ",
@@ -87,7 +86,4 @@ train <- function(
   print(txt)
 }
 
-# train(path_prefix = "/Users/mikeytabak/Desktop/APHIS/mtMoran_projects/MLWIC_dir/MLWIC_package/MLWIC_examples/MLWIC_examples/test_images",
-#       data_info = "/Users/mikeytabak/Desktop/APHIS/mtMoran_projects/MLWIC_dir/MLWIC_package/MLWIC_examples/MLWIC_examples/image_labels.csv",
-#       model_dir = "/Users/mikeytabak/Desktop",
-#       python_loc = "/anaconda2/bin/python2.7")
+

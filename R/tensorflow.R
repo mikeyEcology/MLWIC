@@ -1,8 +1,13 @@
 #' Install TensorFlow for use with \code{MLWIC}
 #'
 #' \code{MLWIC} requires an installation of tensorflow that can be used by Python.
-#' You need to use this before using \code{classify} or \code{train}. If this is your first time using
-#' this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .
+#'  You need to use this before using \code{classify} or \code{train}. If this is your first time using
+#'  this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .
+#'  This function will install tensorflow on Linux machines; if you are using Windows,
+#'  you will need to install tensorflow on your own following the directions here:
+#'  https://www.tensorflow.org/install/install_windows. I recommend using the installation with
+#'  Anaconda.
+#'
 #'
 #' @param os The operating system on your computer. Options are "Mac" or "Ubuntu".
 #'  Specifying "Windows" will thrown an error because we cannot automatically install
@@ -37,7 +42,8 @@ tensorflow <- function(os="Mac"){
       #system("python import_tf.py")
 
     }else if(os == "Windows"){
-      print("Sorry. MLWIC does not run on Windows yet.")
+      print("Sorry. MLWIC cannot install tensorflow on Windows. Please visit
+            https://www.tensorflow.org/install/install_windows for tensorflow installation instructions.")
 
     }else{
       print('Specify operating system - \"Mac\", \"Windows\", or \"Ubuntu\"')

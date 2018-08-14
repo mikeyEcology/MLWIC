@@ -2,7 +2,9 @@
 
 This package identifies animal species in game camera images by implementing the Species Level model described in [Tabak et al.](https://www.biorxiv.org/content/early/2018/06/13/346809)
 
-*Note: At this point, `MLWIC` is not configured to run on Windows. You can attempt to use Windows, but Step 2 will require more work on your part. We hope to eventually optimize `MLWIC` for windows as well (see note below). If you do not already have it, you will need to install Anaconda <b>using the Python 2.7 version</b> found [here](https://www.anaconda.com/download/#macos). During the Anacoda  installation, you will be asked if you want to install Python 2.7.X; you should say yes, and if you install it in the location they suggest on a Mac, it will be the default location that is used by the functions. 
+<b>`MLWIC` will now run on Python3.6 and on Windows computers</b>, but running on Windows will require you to install tensorflow software on your own. 
+
+*Note: At this point, `MLWIC` works best on Linux machines (e.g., Mac and Ubuntu). You can use Windows, but Step 2 will require more work on your part. If you do not already have it, you will need to install Anaconda found [here](https://www.anaconda.com/download/#macos). During the Anacoda  installation, you will be asked if you want to install Python; you should say yes, and if you install it in the location they suggest on a Mac, it will be the default location that is used by the functions. 
 
 <b>Step 1: In R, install the `MLWIC` package</b>
 ```
@@ -12,14 +14,14 @@ library(MLWIC)
 ```
 
 <i> You only need to run steps 2-4 the first time you use this package on a computer.</i>\
-<b>Step 2: Install TensorFlow on your computer.</b> The function `tensorflow` will do this on Macintosh and Ubuntu machines, but the installation of this software is inconsistent. If you have trouble using our function, you can try doing this independently by following the directions [here](https://www.tensorflow.org/install/). 
+<b>Step 2: Install TensorFlow on your computer.</b> The function `tensorflow` will do this on Macintosh and Ubuntu machines, but the installation of this software is inconsistent. If you have trouble using our function or you are using a Windows computer, you can try doing this independently by following the directions [here](https://www.tensorflow.org/install/). 
 
 
-<b>Step 3: Download the L1 folder from this [link](https://drive.google.com/file/d/1_VH78A9AgCErMIcsbOlNEBXgASx2pRsP/view?usp=sharing).</b> After clinking on the link, a new tab will open showing L1.zip. Download this folder by clicking on the download button in the upper right hand corner (looks like an arrow pointing down to a line). Unzip the folder and then store this L1 folder in a location that makes sense on your computer (e.g., Desktop). Note the location, as you will specify this as `model_dir` when you run the functions `classify`, `make_output`, and `train`. 
+<b>Step 3: Download the L1 folder from this [link](https://drive.google.com/file/d/1_OO4KTn6H6nmXGTrKQ6uQ0fAmlAicCXT/view?usp=sharing).</b> After clinking on the link, a new tab will open showing L1.zip. Download this folder by clicking on the download button in the upper right hand corner (looks like an arrow pointing down to a line). Unzip the folder and then store this L1 folder in a location that makes sense on your computer (e.g., Desktop). Note the location, as you will specify this as `model_dir` when you run the functions `classify`, `make_output`, and `train`. 
 
 
 <b>Step 4: Setup your environment for using `MLWIC`</b>\
-Run the function `setup`. `python_loc` is the location of Python 2.7 on your computer. On Macs, it is often in the default-you can determine the location by opening a terminal window and typing `which python2.7`. This function installs several necessary Python packages. Running this function will take a few minutes. If you already have a conda environment called "r-reticulate" with Python packages installed, you can specify `r_reticulate = TRUE`; if you don't know what this means, leave this argument as the default by not specifying it. You may see some errors when you run `setup` - you can ignore these; if there are problems with the installation, whey will become apparent when you run `classify`.\
+Run the function `setup`. `python_loc` is the location of Python on your computer. On Macs, it is often in the default-you can determine the location by opening a terminal window and typing `which python`. This function installs several necessary Python packages. Running this function will take a few minutes. If you already have a conda environment called "r-reticulate" with Python packages installed, you can specify `r_reticulate = TRUE`; if you don't know what this means, leave this argument as the default by not specifying it. You may see some errors when you run `setup` - you can ignore these; if there are problems with the installation, whey will become apparent when you run `classify`.\
 <i> You only need to run steps 2-4 the first time you use this package on a computer.</i>
 
 
@@ -49,8 +51,6 @@ If you are classifying many images at once, you may want to break them into batc
 
 
 <b>Notes:</b>\
-Why doesn't `MLWIC` run on Windows? `MLWIC` uses [TensorFlow](https://www.tensorflow.org/), which on Windows can only be used with Python >= 3.5. Our models depend on Python 2.7. If you can effectively run TensorFlow on Windows with Python 2.7, then you may be able to run `MLWIC` on Windows. 
-
 If you are using this package for a publication, please cite our manuscript: [Machine learning to classify animal species in camera trap images: applications in ecology](https://www.biorxiv.org/content/early/2018/06/13/346809).
 
 

@@ -23,8 +23,7 @@
 #'  You should not need to change this parameter.
 #'  After running this function, you will run \code{make_output} to
 #'  make the output in a more viewer friendly format
-#' @param python_loc The location of python 2.7 on your machine. If you are
-#'  using a Macintosh, the default is the likely location
+#' @param python_loc The location of python on your machine.
 #' @param num_classes The number of classes in your model. If you are using
 #'  the Species Level model from Tabak et al., the number is `28`.
 #' @param delimiter this will be a `,` for a csv.
@@ -39,7 +38,7 @@ classify <- function(
   data_info = paste0(getwd(), "/image_labels.csv"), # csv with file names for each photo. See details
   model_dir = getwd(),
   save_predictions = "model_predictions.txt", # txt file where you want model output to go
-  python_loc = "/anaconda2/bin/", # location of the python that Anacnoda uses on your machine
+  python_loc = "/anaconda3/bin/", # location of the python that Anacnoda uses on your machine
   num_classes = 28, # number of classes in model
   delimiter = ",", # this will be , for a csv.
   log_dir = "USDA182"
@@ -73,7 +72,7 @@ classify <- function(
 
   # set up code
   eval_py <- paste0(python_loc,
-                    "python2.7 eval.py --architecture resnet --depth 18 --log_dir ", log_dir,
+                    "python eval.py --architecture resnet --depth 18 --log_dir ", log_dir,
                     " --path_prefix ", path_prefix,
                     " --batch_size 128 --data_info data_info.csv",
                     " --delimiter ", delimiter,
@@ -84,7 +83,7 @@ classify <- function(
   toc <- Sys.time()
   system(eval_py)
   tic <- Sys.time()
-  runtime <- tic-toc
+  runtime <- difftime(tic, toc, units="auto")
 
   # end function
   txt <- paste0("evaluation of images took ", runtime, ". ",
