@@ -13,6 +13,10 @@ TensorFlow on Windows at this time.}
 }
 \description{
 \code{MLWIC} requires an installation of tensorflow that can be used by Python.
-You need to use this before using \code{classify} or \code{train}. If this is your first time using
-this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .
+ You need to use this before using \code{classify} or \code{train}. If this is your first time using
+ this function, you should see additional documentation at https://github.com/mikeyEcology/MLWIC .
+ This function will install tensorflow on Linux machines; if you are using Windows,
+ you will need to install tensorflow on your own following the directions here:
+ https://www.tensorflow.org/install/install_windows. I recommend using the installation with
+ Anaconda.
 }

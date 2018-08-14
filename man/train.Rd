@@ -20,8 +20,7 @@ number identifying it. The first species must be 0, the next species 1, and so o
 \item{model_dir}{Absolute path to the location where you stored the L1 folder
 that you downloaded from github.}
 
-\item{python_loc}{The location of python 2.7 on your machine. If you are
-using a Macintosh, the default is the likely location}
+\item{python_loc}{The location of python on your machine.}
 
 \item{num_gpus}{The number of GPUs available. If you are using a CPU, leave this as default.}
 

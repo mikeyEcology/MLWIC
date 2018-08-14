@@ -7,7 +7,7 @@
 classify(path_prefix = paste0(getwd(), "/images"),
   data_info = paste0(getwd(), "/image_labels.csv"), model_dir = getwd(),
   save_predictions = "model_predictions.txt",
-  python_loc = "/anaconda2/bin/", num_classes = 28, delimiter = ",",
+  python_loc = "/anaconda3/bin/", num_classes = 28, delimiter = ",",
   log_dir = "USDA182")
 }
 \arguments{
@@ -29,8 +29,7 @@ You should not need to change this parameter.
 After running this function, you will run \code{make_output} to
 make the output in a more viewer friendly format}
 
-\item{python_loc}{The location of python 2.7 on your machine. If you are
-using a Macintosh, the default is the likely location}
+\item{python_loc}{The location of python on your machine.}
 
 \item{num_classes}{The number of classes in your model. If you are using
 the Species Level model from Tabak et al., the number is `28`.}
