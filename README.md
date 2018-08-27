@@ -35,6 +35,7 @@ Run the function `setup`. `python_loc` is the location of Python on your compute
 <b>D)</b> For `log_dir`, use the default if you are using our model from [Tabak et al.](https://www.biorxiv.org/content/early/2018/06/13/346809) If you trained your own model using `train`, use the `log_dir_train` that you specified in that function. \
 <b>E)</b> `num_classes` is the number of species or groups of species in the model. If you are using our model, `num_classes=28`. If you trained your own model, this is the number that you specified. \
 If you are classifying many images at once, you may want to break them into batches of ~10,000, depending on your computer. If you have a computer with a lot of RAM (> 16 GB) or you are using a computing cluster, you will not need to worry about this. 
+<b>Note</b> When running `classify`, if you get an error "No Module named 'tensorflow'" and you are using a Windows computer, you may need to upgrade your setuptools. [See a discussion of the problem here](https://github.com/mikeyEcology/MLWIC/issues/4). 
 
 
 <b>Make a pretty output csv.</b> After evaluating your model, your output will be in your L1 directory in a format that is not reader friendly. You can use `make_output` to make this output more readable and in a desired location.\
