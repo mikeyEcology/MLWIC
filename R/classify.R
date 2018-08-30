@@ -110,7 +110,7 @@ classify <- function(
   runtime <- difftime(tic, toc, units="auto")
 
   # end function
-  txt <- paste0("evaluation of images took ", runtime, ". ",
+  txt <- paste0("evaluation of images took ", runtime, " ", units(runtime), ". ",
                 "The results are stored in ", model_dir, "/L1/", save_predictions, ". ",
                 "To view the results in a viewer-friendly format, please use the function make_output")
   print(txt)
