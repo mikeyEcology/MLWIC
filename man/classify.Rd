@@ -8,7 +8,7 @@ classify(path_prefix = paste0(getwd(), "/images"),
   data_info = paste0(getwd(), "/image_labels.csv"), model_dir = getwd(),
   save_predictions = "model_predictions.txt",
   python_loc = "/anaconda3/bin/", num_classes = 28, delimiter = ",",
-  log_dir = "USDA182")
+  architecture = "resnet", depth = "18", log_dir = "USDA182")
 }
 \arguments{
 \item{path_prefix}{Absolute path to location of the images on your computer (or computing cluster).
@@ -36,9 +36,17 @@ the Species Level model from Tabak et al., the number is `28`.}
 
 \item{delimiter}{this will be a `,` for a csv.}
 
+\item{depth}{the number of layers in the DNN. If you are using the built in model, do not adjust this parameter.
+If you are using a model that you trained, use the same architecture and depth as that model.}
+
 \item{log_dir}{If you trained a model with \code{train}, this
 will be the log_directory that you specified when using that function.
-If you are using the built in model, the default is appropriate.}
+If you are using the built in model, the default is appropriate.
+@param architecture the architecture of the deep neural network (DNN). Resnet-18 is the default.
+Options are c("alexnet", "densenet", "googlenet", "nin", "resnet", "vgg").
+If you are using the trained model that comes with MLWIC, use resnet 18 (the default).
+If you trained a model using a different architechture, you need to specify this same architechture and depth
+that you used for training.}
 }
 \description{
 \code{classify} Uses the Species Level model from Tabak et al. (the built in model) to predict

@@ -7,7 +7,7 @@
 train(path_prefix = paste0(getwd(), "/images"), data_info = paste0(getwd(),
   "/image_labels.csv"), model_dir = getwd(), python_loc = "/anaconda2/bin/",
   num_gpus = 2, num_classes = 28, delimiter = ",",
-  log_dir_train = "train_output")
+  architecture = "resnet", depth = "18", log_dir_train = "train_output")
 }
 \arguments{
 \item{path_prefix}{Absolute path to location of the images on your computer}
@@ -27,6 +27,12 @@ that you downloaded from github.}
 \item{num_classes}{The number of classes (species or groups of species) in your model.}
 
 \item{delimiter}{this will be a `,` for a csv.}
+
+\item{architecture}{the architecture of the deep neural network (DNN). Resnet-18 is the default.
+Other options are c("alexnet", "densenet", "googlenet", "nin", "vgg")}
+
+\item{depth}{the number of layers in the DNN. If you are using resnet, the options are c(18, 34, 50, 101, 152).
+If you are using something other than resnet, the number of layers will be automatically set.}
 
 \item{log_dir_train}{directory where you will store the model information.
 This will be called when you what you specify in the \code{log_dir} option of the

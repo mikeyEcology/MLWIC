@@ -30,6 +30,13 @@
 #' @param log_dir If you trained a model with \code{train}, this
 #'  will be the log_directory that you specified when using that function.
 #'  If you are using the built in model, the default is appropriate.
+#'  @param architecture the architecture of the deep neural network (DNN). Resnet-18 is the default.
+#'  Options are c("alexnet", "densenet", "googlenet", "nin", "resnet", "vgg").
+#'  If you are using the trained model that comes with MLWIC, use resnet 18 (the default).
+#'  If you trained a model using a different architechture, you need to specify this same architechture and depth
+#'  that you used for training.
+#' @param depth the number of layers in the DNN. If you are using the built in model, do not adjust this parameter.
+#'  If you are using a model that you trained, use the same architecture and depth as that model.
 #' @param model_dir Absolute path to the location where you stored the L1 folder
 #'  that you downloaded from github.
 #' @export
@@ -41,6 +48,8 @@ classify <- function(
   python_loc = "/anaconda3/bin/", # location of the python that Anacnoda uses on your machine
   num_classes = 28, # number of classes in model
   delimiter = ",", # this will be , for a csv.
+  architecture = "resnet",
+  depth = "18",
   log_dir = "USDA182"
 
 ){
@@ -69,10 +78,25 @@ classify <- function(
   cpfile <- paste0("cp ", data_info, " ", wd, "/data_info.csv")
   system(cpfile)
 
+  # set depth
+  if(architecture == "alexnet"){
+    depth <- 8
+  }
+  if(architecture == "nin"){
+    depth <- 16
+  }
+  if(architecture == "vgg"){
+    depth <- 22
+  }
+  if(architecture == "googlenet"){
+    depth <- 32
+  }
 
   # set up code
   eval_py <- paste0(python_loc,
-                    "python eval.py --architecture resnet --depth 18 --log_dir ", log_dir,
+                    "python eval.py --architecture ", architecture,
+                    " --depth ", depth,
+                    " --log_dir ", log_dir,
                     " --path_prefix ", path_prefix,
                     " --batch_size 128 --data_info data_info.csv",
                     " --delimiter ", delimiter,
