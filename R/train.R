@@ -102,7 +102,7 @@ train <- function(
   runtime <- difftime(tic, toc, units="auto")
 
   # end function
-  txt <- paste0("training of images took ", runtime, " ", units(runtime),  ". ",
+  txt <- paste0("training of model took ", runtime, " ", units(runtime),  ". ",
                 "The trained model is in ", log_dir_train, ". ",
                 "specify this directory as the log_dir when you use classify(). ")
   print(txt)
