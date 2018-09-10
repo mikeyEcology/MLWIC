@@ -28,7 +28,7 @@
 #' @param architecture the architecture of the deep neural network (DNN). Resnet-18 is the default.
 #'  Other options are c("alexnet", "densenet", "googlenet", "nin", "vgg")
 #' @param depth the number of layers in the DNN. If you are using resnet, the options are c(18, 34, 50, 101, 152).
-#'  If you are using something other than resnet, the number of layers will be automatically set.
+#'  If you are an architecture other than resnet, the number of layers will be automatically set.
 #' @param log_dir_train directory where you will store the model information.
 #'  This will be called when you what you specify in the \code{log_dir} option of the
 #'  \code{classify} function. You will want to use unique names if you are training
@@ -104,7 +104,7 @@ train <- function(
   # end function
   txt <- paste0("training of model took ", runtime, " ", units(runtime),  ". ",
                 "The trained model is in ", log_dir_train, ". ",
-                "specify this directory as the log_dir when you use classify(). ")
+                "Specify this directory as the log_dir when you use classify(). ")
   print(txt)
 }
 
