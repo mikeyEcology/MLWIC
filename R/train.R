@@ -28,7 +28,7 @@
 #' @param architecture the architecture of the deep neural network (DNN). Resnet-18 is the default.
 #'  Other options are c("alexnet", "densenet", "googlenet", "nin", "vgg")
 #' @param depth the number of layers in the DNN. If you are using resnet, the options are c(18, 34, 50, 101, 152).
-#'  If you are using densenet, the options are c(121, 161, 169, 201)
+#'  If you are using densenet, the options are c(121, 161, 169, 201).
 #'  If you are an architecture other than resnet, the number of layers will be automatically set.
 #' @param log_dir_train directory where you will store the model information.
 #'  This will be called when you what you specify in the \code{log_dir} option of the

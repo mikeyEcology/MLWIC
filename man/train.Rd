@@ -32,7 +32,7 @@ that you downloaded from github.}
 Other options are c("alexnet", "densenet", "googlenet", "nin", "vgg")}
 
 \item{depth}{the number of layers in the DNN. If you are using resnet, the options are c(18, 34, 50, 101, 152).
-If you are using densenet, the options are c(121, 161, 169, 201)
+If you are using densenet, the options are c(121, 161, 169, 201).
 If you are an architecture other than resnet, the number of layers will be automatically set.}
 
 \item{log_dir_train}{directory where you will store the model information.
