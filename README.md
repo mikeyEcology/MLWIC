@@ -2,7 +2,7 @@
 
 This package identifies animal species in camera trap images by implementing the Species Level model described in [Tabak et al.](https://www.biorxiv.org/content/early/2018/06/13/346809)
 
-<b>Do you have classified images of wildlife from camera traps that you want to contribute to the next trained model?</b> If you do, please contact me: michael.a.tabak@aphis.usda.gov. This could be a great advantage to you because the model will recongize your species and limit the number of images that you need to manually classify. 
+<b>Do you have classified images of wildlife from camera traps that you want to contribute to the next trained model?</b> If you do, please contact me: michael.a.tabak@usda.gov. This could be a great advantage to you because the model will recongize your species and limit the number of images that you need to manually classify. 
 
 <b>`MLWIC` will now run on Python3.6 and on Windows computers</b>, but running on Windows will require you to install tensorflow software on your own.  `MLWIC` works best on Linux machines (e.g., Mac and Ubuntu). You can use Windows, but Step 2 will require more work on your part. \
 If you do not already have it, you will need to install Anaconda found [here](https://www.anaconda.com/download/#macos). During the Anacoda  installation, you will be asked if you want to install Python; you should say yes, and if you install it in the location they suggest on a Mac, it will be the default location that is used by the functions. 
