@@ -1,6 +1,6 @@
 # MLWIC: Machine Learning for Wildlife Image Classification in R
 
-This package identifies animal species in camera trap images by implementing the Species Level model described in [Tabak et al.](https://www.biorxiv.org/content/early/2018/06/13/346809)
+This package identifies animal species in camera trap images by implementing the Species Level model described in [Tabak et al.](https://www.biorxiv.org/content/early/2018/06/13/346809) If you are having issues when using `MLWIC`, please submit them to the [issues tab](https://github.com/mikeyEcology/MLWIC/issues).
 
 <b>Do you have classified images of wildlife from camera traps that you want to contribute to the next trained model?</b> If you do, please contact me: michael.a.tabak@usda.gov. This could be a great advantage to you because the model will recongize your species and limit the number of images that you need to manually classify. 
 
