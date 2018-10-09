@@ -15,7 +15,7 @@
 #' @export
 setup <- function(
   python_loc = "/anaconda2/bin/python",
-  conda_loc = "/anaconda2/bin/conda",
+  conda_loc = "auto", #"/anaconda2/bin/conda",
   r_reticulate = FALSE
 ){
   # load reticulate
