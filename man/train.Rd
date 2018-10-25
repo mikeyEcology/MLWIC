@@ -4,10 +4,11 @@
 \alias{train}
 \title{Train a machine learning model to classify images}
 \usage{
-train(path_prefix = paste0(getwd(), "/images"), data_info = paste0(getwd(),
-  "/image_labels.csv"), model_dir = getwd(), python_loc = "/anaconda2/bin/",
-  num_gpus = 2, num_classes = 28, delimiter = ",",
-  architecture = "resnet", depth = "18", log_dir_train = "train_output")
+train(path_prefix = paste0(getwd(), "/images"),
+  data_info = paste0(getwd(), "/image_labels.csv"),
+  model_dir = getwd(), python_loc = "/anaconda2/bin/", num_gpus = 2,
+  num_classes = 28, delimiter = ",", architecture = "resnet",
+  depth = "18", log_dir_train = "train_output")
 }
 \arguments{
 \item{path_prefix}{Absolute path to location of the images on your computer}

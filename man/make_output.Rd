@@ -5,7 +5,8 @@
 \title{Present output from a dataset classified by \code{MLWIC}}
 \usage{
 make_output(output_location = getwd(), model_dir = getwd(),
-  output_name = "output.csv", saved_predictions = "model_predictions.txt")
+  output_name = "output.csv",
+  saved_predictions = "model_predictions.txt")
 }
 \arguments{
 \item{output_location}{Absolute path where you want the output csv stored. This path

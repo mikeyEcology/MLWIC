@@ -5,8 +5,8 @@
 \title{Classify images using the trained model}
 \usage{
 classify(path_prefix = paste0(getwd(), "/images"),
-  data_info = paste0(getwd(), "/image_labels.csv"), model_dir = getwd(),
-  save_predictions = "model_predictions.txt",
+  data_info = paste0(getwd(), "/image_labels.csv"),
+  model_dir = getwd(), save_predictions = "model_predictions.txt",
   python_loc = "/anaconda3/bin/", num_classes = 28, delimiter = ",",
   architecture = "resnet", depth = "18", log_dir = "USDA182")
 }
