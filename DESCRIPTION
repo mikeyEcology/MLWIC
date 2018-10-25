@@ -1,7 +1,7 @@
 Package: MLWIC
 Type: Package
 Title: Machine Learning for Wildlife Image Classification
-Version: 0.0.1
+Version: 0.1
 Author: Mikey Tabak
 Maintainer: Mikey Tabak <michael.a.tabak@aphis.usda.gov>
 Description: This package evaluates images using the Species Level model from Tabak et al.
