@@ -1,8 +1,7 @@
 # MLWIC: Machine Learning for Wildlife Image Classification in R
 
-This package identifies animal species in camera trap images by implementing the Species Level model described in [Tabak et al.](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13120) If you are having issues when using `MLWIC`, please submit them to the [issues tab](https://github.com/mikeyEcology/MLWIC/issues).
+This package identifies animal species in camera trap images by implementing the Species Level model described in [Tabak et al.](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13120) <b>If you are having issues when using `MLWIC`, please submit them to the [issues tab](https://github.com/mikeyEcology/MLWIC/issues).</b> (This will work much better than emailing authors directly.)
 
-<b>Do you have classified images of wildlife from camera traps that you want to contribute to the next trained model?</b> If you do, please contact me: michael.a.tabak@usda.gov. This could be a great advantage to you because the model will recongize your species and limit the number of images that you need to manually classify. 
 
 <b>`MLWIC` will now run on Python3.6 and on Windows computers</b>, but running on Windows will require you to install tensorflow software on your own.  `MLWIC` works best on Linux machines (e.g., Mac and Ubuntu). You can use Windows, but Step 2 will require more work on your part. \
 If you do not already have it, you will need to install Anaconda found [here](https://www.anaconda.com/download/#macos). During the Anacoda  installation, you will be asked if you want to install Python; you should say yes, and if you install it in the location they suggest on a Mac, it will be the default location that is used by the functions. 
@@ -48,14 +47,14 @@ If you are classifying many images at once, you may want to break them into batc
 
 
 <b>Train a model.</b> If you have many images with associated labels and you want to train your own model, you can do this using `train`. Steps A, B, C, and D will be similar to classification, but for Step C, you will want to be sure that column 2 contains meaningful species labels (i.e., don't put a 0 in every row if you want to train the model for multiple species). Your first species must be 0, and subsequent species will be increasing numbers: 0,1,2, don't leave a number unused (e.g., if you have a species with the ID=4, you must have species with IDs=0,1,2,3). <b>The csv you make must have Unix linebreaks.</b>\
-<b>D)</b> `log_dir_train` will be the name of the folder that you want to store the trained model information. You will not need to look at this folder, but you will specify it as the `log_dir` when you run `classify`. If you are running multiple models on your machine you will want to use different names each time or else they will be over-written. \
-<b>E)</b> `num_classes` is the number of species or groups of species in your dataset. If you have all of your IDs stored in a vector called `IDs`, `num_classes` should be equal to `length(unique(IDs))`. \
-<b>F)</b> Note that training a model will require a long time to process. More images and more species or groups will require more time to train. We recommend using a computing cluster. If one is not available, we recommend using a machine that you can afford to leave alone for a considerable amount of time. 
+<b>E)</b> `log_dir_train` will be the name of the folder that you want to store the trained model information. You will not need to look at this folder, but you will specify it as the `log_dir` when you run `classify`. If you are running multiple models on your machine you will want to use different names each time or else they will be over-written. \
+<b>F)</b> `num_classes` is the number of species or groups of species in your dataset. If you have all of your IDs stored in a vector called `IDs`, `num_classes` should be equal to `length(unique(IDs))`. \
+<b>G)</b> Note that training a model will require a long time to process. More images and more species or groups will require more time to train. We recommend using a computing cluster. If one is not available, we recommend using a machine that you can afford to leave alone for a considerable amount of time. 
 
 
 <b>Notes:</b>\
 If you are using this package for a publication, please cite our manuscript: \
-Tabak, M. A., M. S. Norouzzadeh, D. W. Wolfson, S. J. Sweeney, K. C. VerCauteren, N. P. Snow, J. M. Halseth, P. A. D. Salvo, J. S. Lewis, M. D. White, B. Teton, J. C. Beasley, P. E. Schlichting, R. K. Boughton, B. Wight, E. S. Newkirk, J. S. Ivan, E. A. Odell, R. K. Brook, P. M. Lukacs, A. K. Moeller, E. G. Mandeville, J. Clune, and R. S. Miller. (2018 - In Press). [Machine learning to classify animal species in camera trap images: applications in ecology](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13120). <i>Methods in Ecology and Evolution</i>.
+Tabak, M. A., M. S. Norouzzadeh, D. W. Wolfson, S. J. Sweeney, K. C. VerCauteren, N. P. Snow, J. M. Halseth, P. A. D. Salvo, J. S. Lewis, M. D. White, B. Teton, J. C. Beasley, P. E. Schlichting, R. K. Boughton, B. Wight, E. S. Newkirk, J. S. Ivan, E. A. Odell, R. K. Brook, P. M. Lukacs, A. K. Moeller, E. G. Mandeville, J. Clune, and R. S. Miller. (2018 - In Press). [Machine learning to classify animal species in camera trap images: Applications in ecology](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13120). <i>Methods in Ecology and Evolution</i>.
 
 and this package
 
