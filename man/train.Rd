@@ -8,7 +8,8 @@ train(path_prefix = paste0(getwd(), "/images"),
   data_info = paste0(getwd(), "/image_labels.csv"),
   model_dir = getwd(), python_loc = "/anaconda2/bin/", num_gpus = 2,
   num_classes = 28, delimiter = ",", architecture = "resnet",
-  depth = "18", log_dir_train = "train_output")
+  depth = "18", batch_size = "128", log_dir_train = "train_output",
+  retrain = TRUE, print_cmd = FALSE)
 }
 \arguments{
 \item{path_prefix}{Absolute path to location of the images on your computer}
@@ -36,10 +37,20 @@ Other options are c("alexnet", "densenet", "googlenet", "nin", "vgg")}
 If you are using densenet, the options are c(121, 161, 169, 201).
 If you are an architecture other than resnet, the number of layers will be automatically set.}
 
+\item{batch_size}{the number of images simultaneously passed to the model for training.
+It must be a multiple of 64. Smaller numbers will train models that are more accurate, but it will
+take longer to train. The default is 128.}
+
 \item{log_dir_train}{directory where you will store the model information.
 This will be called when you what you specify in the \code{log_dir} option of the
 \code{classify} function. You will want to use unique names if you are training
 multiple models on your computer; otherwise they will be over-written.}
+
+\item{retrain}{If TRUE, the model you train will be a retraining of the model presented in
+the Tabak et al. MEE paper. If FALSE, you are starting training from scratch. Retraining will be faster
+but training from scratch will be more flexible.}
+
+\item{print_cmd}{print the system command instead of running the function. This is for development.}
 }
 \description{
 \code{train} allows users to train their own machine learning model using images
