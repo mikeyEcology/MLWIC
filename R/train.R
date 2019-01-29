@@ -34,6 +34,13 @@
 #'  This will be called when you what you specify in the \code{log_dir} option of the
 #'  \code{classify} function. You will want to use unique names if you are training
 #'  multiple models on your computer; otherwise they will be over-written.
+#' @param batch_size the number of images simultaneously passed to the model for training.
+#'  It must be a multiple of 64. Smaller numbers will train models that are more accurate, but it will
+#'  take longer to train. The default is 128.
+#' @param retrain If TRUE, the model you train will be a retraining of the model presented in
+#'  the Tabak et al. MEE paper. If FALSE, you are starting training from scratch. Retraining will be faster
+#'  but training from scratch will be more flexible.
+#' @param print_cmd print the system command instead of running the function. This is for development.
 #' @export
 train <- function(
   # set up some parameters for function
@@ -46,7 +53,10 @@ train <- function(
   delimiter = ",", # this will be , for a csv.
   architecture = "resnet",
   depth = "18",
-  log_dir_train = "train_output"
+  batch_size = "128",
+  log_dir_train = "train_output",
+  retrain = TRUE,
+  print_cmd = FALSE
 ) {
 
   wd1 <- getwd() # the starting working directory
@@ -86,27 +96,48 @@ train <- function(
   }
 
   # run function
-  train_py <- paste0(python_loc,
-                     "python train.py --architecture ", architecture,
-                     " --depth ", depth,
-                     " --path_prefix ", path_prefix,
-                     " --num_gpus ", num_gpus,
-                     " --batch_size 128 --data_info data_info_train.csv",
-                     " --delimiter ", delimiter,
-                     " --retrain_from USDA182 --num_classes ", num_classes,
-                     " --log_dir ", log_dir_train)
+  if(retrain){
+    train_py <- paste0(python_loc,
+                       "python train.py --architecture ", architecture,
+                       " --depth ", depth,
+                       " --path_prefix ", path_prefix,
+                       " --num_gpus ", num_gpus,
+                       " --batch_size ", batch_size,
+                       " --data_info data_info_train.csv",
+                       " --delimiter ", delimiter,
+                       " --retrain_from USDA182 --num_classes ", num_classes,
+                       " --log_dir ", log_dir_train)
+  }else {
+    train_py <- paste0(python_loc,
+                       "python train.py --architecture ", architecture,
+                       " --depth ", depth,
+                       " --path_prefix ", path_prefix,
+                       " --num_gpus ", num_gpus,
+                       " --batch_size ", batch_size,
+                       " --data_info data_info_train.csv",
+                       " --delimiter ", delimiter,
+                       " --num_classes ", num_classes,
+                       " --log_dir ", log_dir_train)
+  }
 
-  # run code
-  toc <- Sys.time()
-  system(train_py)
-  tic <- Sys.time()
-  runtime <- difftime(tic, toc, units="auto")
 
-  # end function
-  txt <- paste0("training of model took ", runtime, " ", units(runtime),  ". ",
-                "The trained model is in ", log_dir_train, ". ",
-                "Specify this directory as the log_dir when you use classify(). ")
-  print(txt)
+  # printing only?
+  if(print_cmd){
+    print(train_py)
+  } else {
+    # run code
+    toc <- Sys.time()
+    system(train_py)
+    tic <- Sys.time()
+    runtime <- difftime(tic, toc, units="auto")
+
+    # end function
+    txt <- paste0("training of model took ", runtime, " ", units(runtime),  ". ",
+                  "The trained model is in ", log_dir_train, ". ",
+                  "Specify this directory as the log_dir when you use classify(). ")
+    print(txt)
+  }
+
 }
 
-
+train(model_dir="~/Desktop", print_cmd=TRUE)
