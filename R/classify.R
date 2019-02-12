@@ -37,6 +37,8 @@
 #'  that you used for training.
 #' @param depth the number of layers in the DNN. If you are using the built in model, do not adjust this parameter.
 #'  If you are using a model that you trained, use the same architecture and depth as that model.
+#' @param top_n the number of guesses you want the model to make (how many species do you want to
+#'  see the confidence for?). This number must be less than or equal to `num_classes`.
 #' @param model_dir Absolute path to the location where you stored the L1 folder
 #'  that you downloaded from github.
 #' @export
@@ -50,6 +52,7 @@ classify <- function(
   delimiter = ",", # this will be , for a csv.
   architecture = "resnet",
   depth = "18",
+  top_n = "5",
   log_dir = "USDA182"
 
 ){
@@ -101,6 +104,7 @@ classify <- function(
                     " --batch_size 128 --data_info data_info.csv",
                     " --delimiter ", delimiter,
                     " --save_predictions ", save_predictions,
+                    " --top_n ", top_n,
                     " --num_classes=", num_classes, "\n")
 
   # run code

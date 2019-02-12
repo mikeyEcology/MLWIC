@@ -8,7 +8,8 @@ classify(path_prefix = paste0(getwd(), "/images"),
   data_info = paste0(getwd(), "/image_labels.csv"),
   model_dir = getwd(), save_predictions = "model_predictions.txt",
   python_loc = "/anaconda3/bin/", num_classes = 28, delimiter = ",",
-  architecture = "resnet", depth = "18", log_dir = "USDA182")
+  architecture = "resnet", depth = "18", top_n = "5",
+  log_dir = "USDA182")
 }
 \arguments{
 \item{path_prefix}{Absolute path to location of the images on your computer (or computing cluster).
@@ -38,6 +39,9 @@ the Species Level model from Tabak et al., the number is `28`.}
 
 \item{depth}{the number of layers in the DNN. If you are using the built in model, do not adjust this parameter.
 If you are using a model that you trained, use the same architecture and depth as that model.}
+
+\item{top_n}{the number of guesses you want the model to make (how many species do you want to
+see the confidence for?). This number must be less than or equal to `num_classes`.}
 
 \item{log_dir}{If you trained a model with \code{train}, this
 will be the log_directory that you specified when using that function.
