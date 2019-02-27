@@ -8,6 +8,7 @@ BiocManager::install("EBImage", version = "3.8")
 #load library
 library(EBImage)
 
+# folder containing images to be classified. 
 image_folder = "C:\\Users\\Test\images\\"
 
 files = as.data.frame(list.files(image_folder))
