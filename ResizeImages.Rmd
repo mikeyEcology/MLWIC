@@ -1,0 +1,30 @@
+# R code to resize images using EBImage package's resize function
+
+# Package installation instructions
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install("EBImage", version = "3.8")
+
+#load library
+library(EBImage)
+
+image_folder = "C:\\Users\\Test\images\\"
+
+files = as.data.frame(list.files(image_folder))
+names(files)[1] = paste("file")
+files$id = 0
+
+# resizing files to 256 by 256 px as required by the MLWIC.
+# saves resized images in the resized folder under the image folder. 
+for(i in 1:nrow(files))
+{ 
+  img_loc = paste(image_folder,files$file[i], sep="")
+  img_crop_loc = paste(image_folder,"resized\\",files$file[i], sep="")
+  img = readImage(files = img_loc)
+  # EBImage functions to resize and write image.
+  img_rez = resize(img, w = 256, h = 256)
+  writeImage(x = img_rez, files = img_crop_loc)
+}
+
+# creates data_info.csv with 0 as species id for all images in the image folder. 
+write_csv(files, path = "L1\\data_info.csv", col_names = F)
