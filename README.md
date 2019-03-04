@@ -54,6 +54,8 @@ If you are classifying many images at once, you may want to break them into batc
 
 
 <b>Notes:</b>\
+If you would like to use the 3.7 million images that we used to train our model, they can be found [here](http://lila.science/datasets/nacti). Microsoft is generously hosting this dataset for free as part of their LILA image dataset program.
+
 If you are using this package for a publication, please cite our manuscript: \
 Tabak, M. A., M. S. Norouzzadeh, D. W. Wolfson, S. J. Sweeney, K. C. VerCauteren, N. P. Snow, J. M. Halseth, P. A. D. Salvo, J. S. Lewis, M. D. White, B. Teton, J. C. Beasley, P. E. Schlichting, R. K. Boughton, B. Wight, E. S. Newkirk, J. S. Ivan, E. A. Odell, R. K. Brook, P. M. Lukacs, A. K. Moeller, E. G. Mandeville, J. Clune, and R. S. Miller. (2018 - In Press). [Machine learning to classify animal species in camera trap images: Applications in ecology](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13120). <i>Methods in Ecology and Evolution</i>.
 
