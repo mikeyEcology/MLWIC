@@ -24,6 +24,8 @@
 #'  After running this function, you will run \code{make_output} to
 #'  make the output in a more viewer friendly format
 #' @param python_loc The location of python on your machine.
+#' @param os the operating system you are using. If you are using windows, set this to
+#'  "Windows", otherwise leave as default
 #' @param num_classes The number of classes in your model. If you are using
 #'  the Species Level model from Tabak et al., the number is `28`.
 #' @param delimiter this will be a `,` for a csv.
@@ -48,6 +50,7 @@ classify <- function(
   model_dir = getwd(),
   save_predictions = "model_predictions.txt", # txt file where you want model output to go
   python_loc = "/anaconda3/bin/", # location of the python that Anacnoda uses on your machine
+  os="Mac",
   num_classes = 28, # number of classes in model
   delimiter = ",", # this will be , for a csv.
   architecture = "resnet",
@@ -78,8 +81,24 @@ classify <- function(
   #                    row.names=FALSE, col.names=FALSE)
   #file.copy(from=data_info, to=paste0(wd, "/data_info.csv"), header=FALSE)
 
+  if(os=="Windows"){
+    # deal with windows file format issues
+    data_file <- read.table(data_info, header=FALSE, sep=",")
+    output.file <- file("data_info_train.csv", "wb")
+    write.table(data_file,
+                file = output.file,
+                append = TRUE,
+                quote = FALSE,
+                row.names = FALSE,
+                col.names = FALSE,
+                sep = ",")
+    close(output.file)
+    rm(output.file)
+  } else {
+
   cpfile <- paste0("cp ", data_info, " ", wd, "/data_info.csv")
   system(cpfile)
+  }
 
   # set depth
   if(architecture == "alexnet"){

@@ -7,9 +7,9 @@
 classify(path_prefix = paste0(getwd(), "/images"),
   data_info = paste0(getwd(), "/image_labels.csv"),
   model_dir = getwd(), save_predictions = "model_predictions.txt",
-  python_loc = "/anaconda3/bin/", num_classes = 28, delimiter = ",",
-  architecture = "resnet", depth = "18", top_n = "5",
-  log_dir = "USDA182")
+  python_loc = "/anaconda3/bin/", os = "Mac", num_classes = 28,
+  delimiter = ",", architecture = "resnet", depth = "18",
+  top_n = "5", log_dir = "USDA182")
 }
 \arguments{
 \item{path_prefix}{Absolute path to location of the images on your computer (or computing cluster).
@@ -31,6 +31,9 @@ After running this function, you will run \code{make_output} to
 make the output in a more viewer friendly format}
 
 \item{python_loc}{The location of python on your machine.}
+
+\item{os}{the operating system you are using. If you are using windows, set this to
+"Windows", otherwise leave as default}
 
 \item{num_classes}{The number of classes in your model. If you are using
 the Species Level model from Tabak et al., the number is `28`.}

@@ -25,6 +25,8 @@
 #' @param delimiter this will be a `,` for a csv.
 #' @param model_dir Absolute path to the location where you stored the L1 folder
 #'  that you downloaded from github.
+#' @param os the operating system you are using. If you are using windows, set this to
+#'  "Windows", otherwise leave as default
 #' @param architecture the architecture of the deep neural network (DNN). Resnet-18 is the default.
 #'  Other options are c("alexnet", "densenet", "googlenet", "nin", "vgg")
 #' @param depth the number of layers in the DNN. If you are using resnet, the options are c(18, 34, 50, 101, 152).
@@ -48,6 +50,7 @@ train <- function(
   data_info = paste0(getwd(), "/image_labels.csv"), # csv with file names for each photo. See details
   model_dir = getwd(),
   python_loc = "/anaconda2/bin/",
+  os="Mac",
   num_gpus = 2,
   num_classes = 28, # number of classes in model
   delimiter = ",", # this will be , for a csv.
@@ -78,8 +81,24 @@ train <- function(
   # labels <- utils::read.csv(data_info, header=FALSE)
   # utils::write.csv(labels, "data_info_train.csv", row.names=FALSE)
 
-  cpfile <- paste0("cp ", data_info, " ", wd, "/data_info_train.csv")
-  system(cpfile)
+  if(os=="Windows"){
+    # deal with windows file format issues
+    data_file <- read.table(data_info, header=FALSE, sep=",")
+    output.file <- file("data_info_train.csv", "wb")
+    write.table(data_file,
+                file = output.file,
+                append = TRUE,
+                quote = FALSE,
+                row.names = FALSE,
+                col.names = FALSE,
+                sep = ",")
+    close(output.file)
+    rm(output.file)
+  } else {
+    cpfile <- paste0("cp ", data_info, " ", wd, "/data_info_train.csv")
+    system(cpfile)
+  }
+
 
   # set depth
   if(architecture == "alexnet"){

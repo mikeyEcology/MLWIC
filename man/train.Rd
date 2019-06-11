@@ -6,10 +6,10 @@
 \usage{
 train(path_prefix = paste0(getwd(), "/images"),
   data_info = paste0(getwd(), "/image_labels.csv"),
-  model_dir = getwd(), python_loc = "/anaconda2/bin/", num_gpus = 2,
-  num_classes = 28, delimiter = ",", architecture = "resnet",
-  depth = "18", batch_size = "128", log_dir_train = "train_output",
-  retrain = TRUE, print_cmd = FALSE)
+  model_dir = getwd(), python_loc = "/anaconda2/bin/", os = "Mac",
+  num_gpus = 2, num_classes = 28, delimiter = ",",
+  architecture = "resnet", depth = "18", batch_size = "128",
+  log_dir_train = "train_output", retrain = TRUE, print_cmd = FALSE)
 }
 \arguments{
 \item{path_prefix}{Absolute path to location of the images on your computer}
@@ -23,6 +23,9 @@ number identifying it. The first species must be 0, the next species 1, and so o
 that you downloaded from github.}
 
 \item{python_loc}{The location of python on your machine.}
+
+\item{os}{the operating system you are using. If you are using windows, set this to
+"Windows", otherwise leave as default}
 
 \item{num_gpus}{The number of GPUs available. If you are using a CPU, leave this as default.}
 
