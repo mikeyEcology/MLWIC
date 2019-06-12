@@ -84,7 +84,7 @@ classify <- function(
   if(os=="Windows"){
     # deal with windows file format issues
     data_file <- read.table(data_info, header=FALSE, sep=",")
-    output.file <- file("data_info_train.csv", "wb")
+    output.file <- file("data_info.csv", "wb")
     write.table(data_file,
                 file = output.file,
                 append = TRUE,
