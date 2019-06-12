@@ -38,6 +38,7 @@ Run the function `setup`. `python_loc` is the location of Python on your compute
 <b>F)</b> `num_classes` is the number of species or groups of species in the model. If you are using our model, `num_classes=28`. If you trained your own model, this is the number that you specified. \
 If you are classifying many images at once, you may want to break them into batches of ~10,000, depending on your computer. If you have a computer with a lot of RAM (> 16 GB) or you are using a computing cluster, you will not need to worry about this. \
 <b>G)</b>`top_n` is the number of guesses that classes that the model will provide guesses for. E.g., if `top_n=5`, the output will include the top 5 classes that it thinks are in the image (and the confidences that are associated with these guesses). Note that you must have `top_n <= num_classes`. Currently, the `make_output` function will only work if `top_n=5`. \
+<b>H)</b>We are starting to collect data on the accuracy of this model on different users' images. Please consider sharing how the model performed on your images following the [instructions here](https://github.com/mikeyEcology/MLWIC/issues/24). \
 <b>Note</b> When running `classify`, if you get an error "No Module named 'tensorflow'" and you are using a Windows computer, you may need to upgrade your setuptools. [See a discussion of the problem here](https://github.com/mikeyEcology/MLWIC/issues/4). Another option is to [try installing tensorflow manually](https://www.tensorflow.org/install/).
 
 
