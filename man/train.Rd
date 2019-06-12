@@ -38,7 +38,7 @@ Other options are c("alexnet", "densenet", "googlenet", "nin", "vgg")}
 
 \item{depth}{the number of layers in the DNN. If you are using resnet, the options are c(18, 34, 50, 101, 152).
 If you are using densenet, the options are c(121, 161, 169, 201).
-If you are an architecture other than resnet, the number of layers will be automatically set.}
+If you are an architecture other than resnet or densenet, the number of layers will be automatically set.}
 
 \item{batch_size}{the number of images simultaneously passed to the model for training.
 It must be a multiple of 64. Smaller numbers will train models that are more accurate, but it will
