@@ -4,7 +4,7 @@ This package identifies animal species in camera trap images by implementing the
 
 
 <b>`MLWIC` will now run on Python3.6 and on Windows computers</b>, but running on Windows will require you to install tensorflow software on your own.  `MLWIC` works best on Linux machines (e.g., Mac and Ubuntu). You can use Windows, but Step 2 will require more work on your part. If you are having trouble running `MLWIC` on Windows, you can see [this companion tutorial](https://github.com/mikeyEcology/MLWIC_examples/blob/master/MLWIC_Windows_Set_up.md) that was graciously provided by a Windows `MLWIC` user for some additional help.\
-If you do not already have it, you will need to install Anaconda found [here](https://www.anaconda.com/download/#macos). During the Anacoda  installation, you will be asked if you want to install Python; you should say yes, and if you install it in the location they suggest on a Mac, it will be the default location that is used by the functions. 
+If you do not already have it, you will need to install Anaconda found [here](https://www.anaconda.com/download/#macos). During the Anacoda installation, you will be asked if you want to install Python; you should say yes, and if you install it in the location they suggest on a Mac, it will be the default location that is used by the functions. 
 
 <b>Step 1: In R, install the `MLWIC` package</b>
 ```
@@ -39,7 +39,7 @@ Run the function `setup`. `python_loc` is the location of Python on your compute
 If you are classifying many images at once, you may want to break them into batches of ~10,000, depending on your computer. If you have a computer with a lot of RAM (> 16 GB) or you are using a computing cluster, you will not need to worry about this. \
 <b>G)</b> `top_n` is the number of guesses that classes that the model will provide guesses for. E.g., if `top_n=5`, the output will include the top 5 classes that it thinks are in the image (and the confidences that are associated with these guesses). Note that you must have `top_n <= num_classes`. Currently, the `make_output` function will only work if `top_n=5`. \
 <b>H)</b> We are starting to collect data on the accuracy of this model on different users' images. Please consider sharing how the model performed on your images following the [instructions here](https://github.com/mikeyEcology/MLWIC/issues/24). \
-<b>Note</b> When running `classify`, if you get an error "No Module named 'tensorflow'" and you are using a Windows computer, you may need to upgrade your setuptools. [See a discussion of the problem here](https://github.com/mikeyEcology/MLWIC/issues/4). Another option is to [try installing tensorflow manually](https://www.tensorflow.org/install/).
+<b>Note</b> When running `classify`, if you get an error "No Module named 'tensorflow'" and you are using a Windows computer, you may need to upgrade your setuptools. [See a discussion of the problem here](https://github.com/mikeyEcology/MLWIC/issues/4). Another option is to [try installing tensorflow manually](https://www.tensorflow.org/install/). Some Windows users have also found that they need to uninstall and reinstall python, anaconda, and tensorflow. 
 
 
 <b>Make a pretty output csv.</b> After evaluating your model, your output will be in your L1 directory in a format that is not reader friendly. You can use `make_output` to make this output more readable and in a desired location.\

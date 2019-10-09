@@ -42,6 +42,10 @@
 #' @param retrain If TRUE, the model you train will be a retraining of the model presented in
 #'  the Tabak et al. MEE paper. If FALSE, you are starting training from scratch. Retraining will be faster
 #'  but training from scratch will be more flexible.
+#' @param retrain_from name of the directory from which you want to retrain the model.
+#' @param num_epochs the number of epochs you want to use for training. The default is 55 and this is
+#'  recommended for training a full model. But if you need to start and stop training, you may want to use
+#'  a smaller number at times.
 #' @param print_cmd print the system command instead of running the function. This is for development.
 #' @export
 train <- function(
@@ -59,6 +63,8 @@ train <- function(
   batch_size = "128",
   log_dir_train = "train_output",
   retrain = TRUE,
+  retrain_from = "USDA182",
+  num_epochs = 55,
   print_cmd = FALSE
 ) {
 
@@ -124,7 +130,9 @@ train <- function(
                        " --batch_size ", batch_size,
                        " --data_info data_info_train.csv",
                        " --delimiter ", delimiter,
-                       " --retrain_from USDA182 --num_classes ", num_classes,
+                       " --num_epochs ", num_epochs,
+                       " --retrain_from ", retrain_from,
+                       " --num_classes ", num_classes,
                        " --log_dir ", log_dir_train)
   }else {
     train_py <- paste0(python_loc,
@@ -135,6 +143,7 @@ train <- function(
                        " --batch_size ", batch_size,
                        " --data_info data_info_train.csv",
                        " --delimiter ", delimiter,
+                       " --num_epochs ", num_epochs,
                        " --num_classes ", num_classes,
                        " --log_dir ", log_dir_train)
   }

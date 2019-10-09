@@ -9,7 +9,8 @@ train(path_prefix = paste0(getwd(), "/images"),
   model_dir = getwd(), python_loc = "/anaconda2/bin/", os = "Mac",
   num_gpus = 2, num_classes = 28, delimiter = ",",
   architecture = "resnet", depth = "18", batch_size = "128",
-  log_dir_train = "train_output", retrain = TRUE, print_cmd = FALSE)
+  log_dir_train = "train_output", retrain = TRUE,
+  retrain_from = "USDA182", num_epochs = 55, print_cmd = FALSE)
 }
 \arguments{
 \item{path_prefix}{Absolute path to location of the images on your computer}
@@ -52,6 +53,12 @@ multiple models on your computer; otherwise they will be over-written.}
 \item{retrain}{If TRUE, the model you train will be a retraining of the model presented in
 the Tabak et al. MEE paper. If FALSE, you are starting training from scratch. Retraining will be faster
 but training from scratch will be more flexible.}
+
+\item{retrain_from}{name of the directory from which you want to retrain the model.}
+
+\item{num_epochs}{the number of epochs you want to use for training. The default is 55 and this is
+recommended for training a full model. But if you need to start and stop training, you may want to use
+a smaller number at times.}
 
 \item{print_cmd}{print the system command instead of running the function. This is for development.}
 }
