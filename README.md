@@ -1,6 +1,6 @@
 # MLWIC: Machine Learning for Wildlife Image Classification in R
 
-This package identifies animal species in camera trap images by implementing the model described in [Tabak et al.](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13120) <b>If you are having issues when using `MLWIC`, please submit them to the [issues tab](https://github.com/mikeyEcology/MLWIC/issues).</b> (This will work much better than emailing authors directly.)
+This package identifies animal species in camera trap images by implementing the model described in [Tabak et al.](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13120). I am currently developing [MLWIC2](https://github.com/mikeyEcology/MLWIC2), which has some added functionality and a newly trained with 58 species, but is still in the development stage. 
 
 
 <b>`MLWIC` will now run on Python3.6 and on Windows computers</b>, but running on Windows will require you to install tensorflow software on your own.  `MLWIC` works best on Linux machines (e.g., Mac and Ubuntu). You can use Windows, but Step 2 will require more work on your part. If you are having trouble running `MLWIC` on Windows, you can see [this companion tutorial](https://github.com/mikeyEcology/MLWIC_examples/blob/master/MLWIC_Windows_Set_up.md) that was graciously provided by a Windows `MLWIC` user for some additional help.\
