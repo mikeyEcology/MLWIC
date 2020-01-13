@@ -3,7 +3,7 @@
 This package identifies animal species in camera trap images by implementing the model described in [Tabak et al.](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13120). I am currently developing [MLWIC2](https://github.com/mikeyEcology/MLWIC2), which has some added functionality (including Shiny apps) and a newly-trained model with 58 species, but is still in the development stage. The initialization in steps 2 and 4 will be the same in the new package. 
 
 
-<b>`MLWIC` will run on Python 3.6 and on Windows computers</b>, but running on Windows will require you to install tensorflow (a version less than 2.0) software on your own. If you are having trouble running `MLWIC` on Windows, you can see [this companion tutorial](https://github.com/mikeyEcology/MLWIC_examples/blob/master/MLWIC_Windows_Set_up.md) that was graciously provided by a Windows `MLWIC` user for some additional help.\
+<b>`MLWIC` will run on Python 3.6 and on Windows computers</b>, but running on Windows will require you to install tensorflow (version 1.14) software on your own. If you are having trouble running `MLWIC` on Windows, you can see [this companion tutorial](https://github.com/mikeyEcology/MLWIC_examples/blob/master/MLWIC_Windows_Set_up.md) that was graciously provided by a Windows `MLWIC` user for some additional help.\
 If you do not already have it, you will need to install Anaconda found [here](https://www.anaconda.com/download/#macos). During the Anacoda installation, you will be asked if you want to install Python; you should say yes, and if you install it in the location they suggest on a Mac, it will be the default location that is used by the functions. 
 
 <b>Step 1: In R, install the `MLWIC` package</b>
@@ -14,7 +14,7 @@ library(MLWIC)
 ```
 
 <i> You only need to run steps 2-4 the first time you use this package on a computer.</i>\
-<b>Step 2: Install TensorFlow (<2.0) on your computer.</b> The function `tensorflow` will do this on Macintosh and Ubuntu machines, but the installation of this software is inconsistent. If you have trouble using our function or you are using a Windows computer, you can try doing this independently by following the directions [here](https://www.tensorflow.org/install/). 
+<b>Step 2: Install TensorFlow (version 1.14) on your computer.</b> The function `tensorflow` will do this on Macintosh and Ubuntu machines, but the installation of this software is inconsistent. If you have trouble using our function or you are using a Windows computer, you can try doing this independently by following the directions [here](https://www.tensorflow.org/install/). 
 
 
 <b>Step 3: Download the L1 folder from this [link](https://drive.google.com/file/d/1dY-49drRrSotFMHOOPZXrTgl5gqozGVL/view?usp=sharing).</b> After clinking on the link, a new tab will open showing L1.zip. Download this folder by clicking on the download button in the upper right hand corner (looks like an arrow pointing down to a line). Unzip the folder and then store this L1 folder in a location that makes sense on your computer (e.g., Desktop). Note the location, as you will specify this as `model_dir` when you run the functions `classify`, `make_output`, and `train`. 
