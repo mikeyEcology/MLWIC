@@ -17,7 +17,7 @@
 tensorflow <- function(os="Mac"){
 
   ## Check for python 2.7
-  vpython <- system("pyv=\"$(python -V 2>&1)\" | echo $pyv | grep \"2.7\"") ## come back to this
+  vpython <- system("pyv=\"$(python -V)\" | echo $pyv| grep \"Python\"") 
 
   if(vpython == TRUE){
     print("Python is installed. Installing homebrew, protobuf, pip, and tensorflow.")
@@ -29,7 +29,7 @@ tensorflow <- function(os="Mac"){
       system("sudo easy_install --upgrade pip")
       system("sudo easy_install --upgrade six")
 
-      system("sudo pip install tensorflow")
+      system("sudo pip install tensorflow 1.14")
       ## Something to validate installation, beyond this.
       #system("python import_tf.py")
 
@@ -37,20 +37,21 @@ tensorflow <- function(os="Mac"){
 
     }else if(os == "Ubuntu"){
       system("sudo apt-get install python-pip python-dev")   # for Python 2.7
-      system("pip install tensorflow")
+      system("pip install tensorflow 1.14")
 
       #system("python import_tf.py")
 
     }else if(os == "Windows"){
       print("Sorry. MLWIC cannot install tensorflow on Windows. Please visit
-            https://www.tensorflow.org/install/install_windows for tensorflow installation instructions.")
+            https://www.tensorflow.org/install/install_windows for tensorflow installation instructions and install a version 
+that is less than 2.0 (for example install tensorflow 1.14).")
 
     }else{
       print('Specify operating system - \"Mac\", \"Windows\", or \"Ubuntu\"')
     }
 
   }else{
-    print("Python needs to be installed. Install Python 2.7, ideally Anaconda, before proceeding. MLWIC does not work with Python 3 at this time.")
+    print("Python needs to be installed.")
   }
 
 }
