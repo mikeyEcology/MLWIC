@@ -67,4 +67,21 @@ Tabak, M. A., M. S. Norouzzadeh, D. W. Wolfson, S. J. Sweeney, K. C. VerCauteren
 
 Some users have found low accuracy when running the built in model on their images. It is highly advised that users test the model on some images from their dataset that have been manually classified before assuming that the output of the model will be the correct species. 
 
+```
+@article{tabakMachineLearningClassify2019,
+  title = {Machine Learning to Classify Animal Species in Camera Trap Images: {{Applications}} in Ecology},
+  shorttitle = {Machine Learning to Classify Animal Species in Camera Trap Images},
+  author = {Tabak, Michael A. and Norouzzadeh, Mohammad S. and Wolfson, David W. and Sweeney, Steven J. and Vercauteren, Kurt C. and Snow, Nathan P. and Halseth, Joseph M. and Di Salvo, Paul A. and Lewis, Jesse S. and White, Michael D. and Teton, Ben and Beasley, James C. and Schlichting, Peter E. and Boughton, Raoul K. and Wight, Bethany and Newkirk, Eric S. and Ivan, Jacob S. and Odell, Eric A. and Brook, Ryan K. and Lukacs, Paul M. and Moeller, Anna K. and Mandeville, Elizabeth G. and Clune, Jeff and Miller, Ryan S.},
+  year = {2019},
+  volume = {10},
+  pages = {585--590},
+  issn = {2041-210X},
+  doi = {10.1111/2041-210X.13120},
+  copyright = {\textcopyright{} 2018 The Authors. Methods in Ecology and Evolution \textcopyright{} 2018 British Ecological Society},
+  journal = {Methods in Ecology and Evolution},
+  keywords = {artificial intelligence,camera trap,convolutional neural network,deep neural networks,image classification,machine learning,r package,remote sensing},
+  language = {en},
+  number = {4}
+}
 
+```
