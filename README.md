@@ -1,5 +1,7 @@
 # MLWIC: Machine Learning for Wildlife Image Classification in R
 
+> MLWIC is no longer maintained. **See:** [WildObserve](https://www.qsc.earth/WildObserve/): a desktop app for Mac, Windows, and Linux that finds animals in camera-trap images, suggests species, learns your project's species as you review, and estimates occupancy and abundance, with your images staying on your computer.
+
 This package identifies animal species in camera trap images by implementing the model described in [Tabak et al.](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13120). I am currently developing [MLWIC2](https://github.com/mikeyEcology/MLWIC2), which has some added functionality (including Shiny apps) and a newly-trained model with 58 species, but is still in the development stage. The initialization in steps 2 and 4 will be the same in the new package. 
 
 
